@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Jade's Personal Website </title>
+    <style>
+        .background-image {
+            background-image: url('/assets/bg3.svg');
+            background-size: cover;
+            background-position:center ;
+            height: full;
+
+        }
+    </style>
+     <style>
+        .background-image2 {
+            background-image: url('/assets/try.png');
+            background-size:cover ;
+            background-position:center ;
+            height: full;
+        }
+    </style>
+    <style> 
+     .scroll-offset {
+        scroll-margin-top: 110px;
+     
+    }
+    </style>
+    <style>
+        .text-outline {
+          color: white;
+          text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+        }
+      </style>
+       <style>
+        .text-whiteoutline {
+          color: rgb(5, 61, 5);
+          text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+        }
+      </style>
+       <style>
+        .text-c3 {
+          color: black;
+          text-shadow:   -1px 1px 0 #ffffff;
+        }
+      </style>
+
+      <style>
+        .image-container {
+    display: inline-block;
+    height: 100%;
+}
+
+img {
+    height: 100%;
+    width: auto;
+    display: block;
+}
+      </style>
+      <style>
+        .flex-container{
+            display:flex;
+            align-items: center;
+        }
+
+        .responsive-image{
+            width: auto;
+            height: 100%;
+            max-height: 4rem;
+        }
+      </style>
+
+</head>
+<body >
+   
+        <header class="z-10 bg-black text-white p-5 fixed w-full">
+            <h1 class = "text-3xl 2xl:text-6xl font-bold mx-2 sm:mx-6">Portfolio! </h1>
+            <nav>
+                <ul class="flex justify-end 2xl:text-4xl space-x-5 mr-2 sm:mr-14 md:mr-20 lg:mr-28 xl:mr-32">
+                    <li><a href="#projects" class="hover:underline">Project</a></li>
+                    <li><a href="#about" class="hover:underline">About</a></li>
+                    <li><a href="#contact" class="hover:underline">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="pt-20 sm:pt-14" >
+            <div class=" background-image p-5 sm:p-10 2xl:pt-20">
+
+                    <section class = " max-w-full scroll-offset mb-10 grid grid-cols-1 sm:grid-cols-12 rounded-bl-3xl rounded-br-3xl">
+                        <div class=" flex justify-center xl:justify-end xl:items-center xl:h-screen sm:pb-10 col-span-4 xl:col-span-6">
+                            <img src="../assets/forprof.png" alt="handsome pic" class="w-full sm:w-72 xl:w-full xl:h-full xl:pr-10 h-auto mx-5 xl:mx-0 grid ">
+                        </div>
+                        <div class="flex flex-col justify-center text-white font-sans col-span-8 xl:col-span-4">
+                          <div class="background-image2 rounded-lg">
+                            <p class="pl-5">
+                                <span class=" font-bold p-2">Hello, I am        </span>
+                                <span class="text-2xl font-bold text-outline ">   Jade !</span>
+                              </p>
+                                                          
+                                <h1 class="font-extrabold text-whiteoutline text-center sm:text-left ">
+                                    <span>I'M A </span>
+                                    <span class="text-4xl">PROGRAMMER</span> 
+                                </h1>
+                                <p class="lg:pr-10 text-xs pl-6">
+                                    <span>That turns your </span>
+                                    <span class="font-extrabold text-2xl text-black">visions</span> 
+                                    <span>into </span>
+                                    <span class="font-extrabold text-2xl  ">virtual realities.</span>
+                                    <span>
+                                    <div class="relative flex justify-end mx-3 p-4 pr-0 sm:mx-10">
+                                        <img src="/assets/arrow.png" alt="arrow" class="w-16 object-contain">
+                                        <div class="absolute inset-0 flex items-center justify-end mx-7">
+                                            <h4 class="text-xs font-semibold "><a href="pages/resume.html" class="hover:text-green-500">Go to Resume</a></h4>
+                                        </div>
+                                        <div></div>
+                          </div>
+                           
+                                </div></span>
+                            </p>
+                          
+                            
+                        </div>
+                    </section>
+           
+    
+            <section id="projects" class=" scroll-offset background-image2 max-w-full mb-10 rounded-tl-2xl rounded-tr-2xl rounded-b-2xl text-white ">
+                <h1 class="text-center bg-black text-3xl font-bold p-6 rounded-tl-2xl rounded-tr-2xl ">PROJECT</h1>
+                <div class="opacity-100">
+                
+                <div>
+                    <div >
+                        <h3 class="text-center text-2xl font-semibold pt-5 text-outline sm:text-4xl">GrouCord App</h3>
+                        <div class="flex justify-center items-start">
+                            <img src="/assets/groucord.png" alt="pogi" class="w-48 sm:w-64 h-auto object-contain ">
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <p class="p-5 font-semibold sm:p-10">GrouCord (Group Coordinator App) is an application developed to enhance planning, management, and coordination within a group, facilitating the creation of group projects and streamlining other collaborative activities.</p>
+                    </div>
+
+                    
+                </div>
+              
+               </div>
+               
+            </section>
+
+            <section id="about" class="scroll-offset background-image2 max-w-full mb-10 rounded-t-2xl" >
+                <div>
+                    <h1 class="bg-black text-center text-white font-bold text-3xl p-6 rounded-t-2xl ">About Me</h1>
+                    <div>
+                        <div class="rounded-b-xl border-b-8 border-black grid grid-cols-10 items-center ">
+                            <div class="col-span-6 m-2 ">
+                                <p class="from-neutral-700 font-semibold ml-2 grid justify-center">Hey There! Let me tell you a few things...</p>
+                            </div>
+                                <img src="/assets/jadepic.png" alt="jade image" class="col-span-4 grid justify-end ">
+                            
+                            
+
+                        </div>
+                        <div class=" text-white p-7 font-semibold ">
+                            <p> <span>I am </span><span class="font-bold text-outline"> Jade A. Jaballa</span><span></span>. A curious and cautious programmer for you. I may not look like it, act like it or sounds like it, but I'm certainly an overthiker and a critical thinker that made me able to become a problem solver.  </p>
+                            <p>Did you know that because of this characteristics of mine, I almost feel like I'm a dumb? It's funny how I overthink and question even the most simple and obvious thing that occurs.</p>
+                            <p>However, Paulo Coelho once said, "The simple things are also the most extraordinary things, and only the wise can see them."</p>
+                            <p>So if you wanna see those extraordinary things come into virtual reality, reach out and let's work it out. Enjoy the simple things and I'll deal on what complicates.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="contact" class="scroll-offset background-image2 max-w-full mb-10 rounded-t-2xl rounded-b-2xl">
+                <div>
+                    <h1 class="bg-black text-center text-white font-bold text-3xl p-6 rounded-t-2xl">Contact</h1>
+                    <div>
+                        <div>
+                            <p>This is how you can contact me...</p> 
+                        </div>
+                        <div class="p-3 pt-0 text-white ">
+                            <div class="p-5 border-2 border-black m-7 flex items-center">
+                                <div class="image-container style= height: 100%;">
+                                    <img src="/assets/fb_logo.png" alt="facebook" style="height: 100%; width: auto;">
+                                </div>
+                                
+                                <p>Jade Abadiano Jaballa</p>
+                            </div>
+                            <div class="p-5 border-2 border-black m-7">
+                                <p>m.me/jade.jaballa</p>
+                            </div>
+                            <div class="p-5 border-2 border-black m-7 text-xs">
+                                <p>jade.abadiano.jaballa@gmail.com</p>
+                            </div>
+                            <div class="p-5 border-2 border-black m-7">
+                                +63-993-310-3211
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+    
+</body>
+</html>
