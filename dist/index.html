@@ -20,6 +20,7 @@
             background-size:cover ;
             background-position:center ;
             height: full;
+            
         }
     </style>
     <style> 
@@ -43,7 +44,7 @@
        <style>
         .text-c3 {
           color: black;
-          text-shadow:   -1px 1px 0 #ffffff;
+          text-shadow:   -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
         }
       </style>
 
@@ -71,6 +72,11 @@ img {
             max-height: 4rem;
         }
       </style>
+       <style>
+        .indent {
+          text-indent: 2em; /* Adjust the indent size here */
+        }
+      </style>
 
 </head>
 <body >
@@ -78,7 +84,7 @@ img {
         <header class="z-10 bg-black text-white p-5 fixed w-full">
             <h1 class = "text-3xl 2xl:text-6xl font-bold mx-2 sm:mx-6">Portfolio! </h1>
             <nav>
-                <ul class="flex justify-end 2xl:text-4xl space-x-5 mr-2 sm:mr-14 md:mr-20 lg:mr-28 xl:mr-32">
+                <ul class="flex justify-end 2xl:text-4xl space-x-5 xl:space-x-8 mr-2 sm:mr-14 md:mr-20 lg:mr-28 xl:mr-32">
                     <li><a href="#projects" class="hover:underline">Project</a></li>
                     <li><a href="#about" class="hover:underline">About</a></li>
                     <li><a href="#contact" class="hover:underline">Contact</a></li>
@@ -90,29 +96,29 @@ img {
 
                     <section class = " max-w-full scroll-offset mb-10 grid grid-cols-1 sm:grid-cols-12 rounded-bl-3xl rounded-br-3xl">
                         <div class=" flex justify-center xl:justify-end xl:items-center xl:h-screen sm:pb-10 col-span-4 xl:col-span-6">
-                            <img src="../assets/forprof.png" alt="handsome pic" class="w-full sm:w-72 xl:w-full xl:h-full xl:pr-10 h-auto mx-5 xl:mx-0 grid ">
+                            <img src="../assets/jadepro.svg" alt="handsome pic" class="w-full sm:w-72 xl:w-full xl:h-full xl:pr-10 h-auto mx-5 xl:mx-0 grid ">
                         </div>
-                        <div class="flex flex-col justify-center text-white font-sans col-span-8 xl:col-span-4">
+                        <div class="flex flex-col justify-center text-white font-sans col-span-8 xl:col-span-6 ">
                           <div class="background-image2 rounded-lg">
-                            <p class="pl-5">
-                                <span class=" font-bold p-2">Hello, I am        </span>
-                                <span class="text-2xl font-bold text-outline ">   Jade !</span>
+                            <p class="pl-5 sm:pl-10 xl:pl-20 sm:mt-2 2xl:mt-5">
+                                <span class=" font-bold p-2 sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl">Hello, I am        </span>
+                                <span class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl xl:mx-2 font-bold text-outline ">   Jade !</span>
                               </p>
                                                           
-                                <h1 class="font-extrabold text-whiteoutline text-center sm:text-left ">
-                                    <span>I'M A </span>
-                                    <span class="text-4xl">PROGRAMMER</span> 
+                                <h1 class="font-extrabold text-whiteoutline text-center sm:text-left sm:ml-4 sm:mt-1 2xl:mt-8 xl:mx-2">
+                                    <span class="lg:text-xl xl:text-2xl 2xl:text-5xl">I'M A </span>
+                                    <span class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-9xl">PROGRAMMER</span> 
                                 </h1>
-                                <p class="lg:pr-10 text-xs pl-6">
+                                <p class="lg:pr-0 text-xs sm:text-sm lg:text-lg xl:text-xl 2xl:text-4xl pl-6 sm:pl-12 xl:pl-24 sm:mt-1 2xl:mt-5">
                                     <span>That turns your </span>
-                                    <span class="font-extrabold text-2xl text-black">visions</span> 
+                                    <span class="font-extrabold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl text-black">visions</span> 
                                     <span>into </span>
-                                    <span class="font-extrabold text-2xl  ">virtual realities.</span>
+                                    <span class="font-extrabold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl 2xl:pb-10">virtual realities. </span>
                                     <span>
-                                    <div class="relative flex justify-end mx-3 p-4 pr-0 sm:mx-10">
-                                        <img src="/assets/arrow.png" alt="arrow" class="w-16 object-contain">
+                                    <div class="relative flex justify-end mx-3 p-4 pr-0 sm:mx-10 2xl:my-10">
+                                        <img src="/assets/arrow.png" alt="arrow" class="w-16 xl:w-20 object-contain">
                                         <div class="absolute inset-0 flex items-center justify-end mx-7">
-                                            <h4 class="text-xs font-semibold "><a href="../dist/pages/resume.html" class="hover:text-green-500">Go to Resume</a></h4>
+                                            <h4 class="text-xs sm:text-sm lg:text-lg 2xl:text-4xl font-semibold xl:mr-5 2xl:mr-10 "><a href="../dist/pages/resume.html" class="hover:text-green-500">Go to Resume</a></h4>
                                         </div>
                                         <div></div>
                           </div>
@@ -123,22 +129,24 @@ img {
                             
                         </div>
                     </section>
+
+                    
            
     
             <section id="projects" class=" scroll-offset background-image2 max-w-full mb-10 rounded-tl-2xl rounded-tr-2xl rounded-b-2xl text-white ">
-                <h1 class="text-center bg-black text-3xl font-bold p-6 rounded-tl-2xl rounded-tr-2xl ">PROJECT</h1>
-                <div class="opacity-100">
+                <h1 class="text-center bg-black text-3xl 2xl:text-7xl font-bold p-6 rounded-tl-2xl rounded-tr-2xl ">PROJECT</h1>
+                <div class="opacity-100 2xl:mx-32">
                 
                 <div>
                     <div >
-                        <h3 class="text-center text-2xl font-semibold pt-5 text-outline sm:text-4xl">GrouCord App</h3>
+                        <h3 class="text-center text-2xl font-semibold pt-5 text-outline sm:text-4xl 2xl:text-6xl">GrouCord App</h3>
                         <div class="flex justify-center items-start">
                             <img src="/assets/groucord.png" alt="pogi" class="w-48 sm:w-64 h-auto object-contain ">
                         </div>
                         
                     </div>
                     <div>
-                        <p class="p-5 font-semibold sm:p-10">GrouCord (Group Coordinator App) is an application developed to enhance planning, management, and coordination within a group, facilitating the creation of group projects and streamlining other collaborative activities.</p>
+                        <p class="leading-relaxed p-5 font-light sm:text-lg sm:p-10 lg:text-2xl 2xl:text-5xl"><span class="text-outline font-semibold">GrouCord</span> <span class="font-extralight italic">(Group Coordinator App)</span> is an application developed to enhance planning, management, and coordination within a group, facilitating the creation of group projects and streamlining other collaborative activities.</p>
                     </div>
 
                     
@@ -150,22 +158,21 @@ img {
 
             <section id="about" class="scroll-offset background-image2 max-w-full mb-10 rounded-t-2xl" >
                 <div>
-                    <h1 class="bg-black text-center text-white font-bold text-3xl p-6 rounded-t-2xl ">About Me</h1>
+                    <h1 class="bg-black text-center text-white font-bold text-3xl 2xl:text-7xl p-6 rounded-t-2xl ">About Me</h1>
                     <div>
-                        <div class="rounded-b-xl border-b-8 border-black grid grid-cols-10 items-center ">
-                            <div class="col-span-6 m-2 ">
-                                <p class="from-neutral-700 font-semibold ml-2 grid justify-center">Hey There! Let me tell you a few things...</p>
+                        <div class="bg-white bg-opacity-20 rounded-b-xl border-b-8 border-black grid grid-cols-10 items-center sm:text-xl lg:text-3xl 2xl:text-5xl">
+                            <div class="col-span-6 m-2 2xl:col-span-8 ">
+                                <p class="from-neutral-700 font-extralight ml-2 grid justify-center">Hey There! Let me tell you a few things...</p>
                             </div>
-                                <img src="/assets/jadepic.png" alt="jade image" class="col-span-4 grid justify-end ">
-                            
-                            
+                                <img src="/assets/jadepic.png" alt="jade image" class="col-span-4 2xl:col-span-2 grid justify-self-end">
+        
 
                         </div>
-                        <div class=" text-white p-7 font-semibold ">
-                            <p> <span>I am </span><span class="font-bold text-outline"> Jade A. Jaballa</span><span></span>. A curious and cautious programmer for you. I may not look like it, act like it or sounds like it, but I'm certainly an overthiker and a critical thinker that made me able to become a problem solver.  </p>
-                            <p>Did you know that because of this characteristics of mine, I almost feel like I'm a dumb? It's funny how I overthink and question even the most simple and obvious thing that occurs.</p>
-                            <p>However, Paulo Coelho once said, "The simple things are also the most extraordinary things, and only the wise can see them."</p>
-                            <p>So if you wanna see those extraordinary things come into virtual reality, reach out and let's work it out. Enjoy the simple things and I'll deal on what complicates.</p>
+                        <div class=" text-white p-7 font-light sm:text-lg lg:text-2xl 2xl:text-5xl">
+                            <p class="indent leading-relaxed"> <span>I am </span><span class="font-semibold text-outline"> Jade A. Jaballa</span>. A curious and cautious programmer for you. I may not look like it, act like it or sounds like it, but I'm certainly an <span class="font-semibold text-outline">overthiker</span>  and a <span class="text-outline font-semibold">critical thinker </span>that made me able to become a <span class="text-outline font-semibold">problem solver</span>.  </p>
+                            <p class="leading-relaxed">Did you know that because of this characteristics of mine, I almost feel like I'm a <span class="text-outline font-semibold">dumb?</span> It's funny how I overthink and question even the most <span class="text-outline font-semibold">simple</span> and <span class="text-outline font-semibold">obvious</span> thing that occurs.</p>
+                            <p class="indent leading leading-relaxed">However, <span class="text-outline font-semibold">Paulo Coelho</span> once said, <span class="text-outline font-semibold">"The simple things are also the most extraordinary things, and only the wise can see them."</span></p>
+                            <p class="indent leading-relaxed">So if you wanna see those <span class="text-outline font-semibold">extraordinary things</span> come into <span class="text-outline font-semibold">virtual reality</span>, reach out and let's work it out. Enjoy the <span class="text-outline font-semibold">simple</span> things and I'll deal on what <span class="text-outline font-semibold">complicates</span>.</p>
                         </div>
                     </div>
                 </div>
@@ -174,27 +181,27 @@ img {
 
             <section id="contact" class="scroll-offset background-image2 max-w-full mb-10 rounded-t-2xl rounded-b-2xl">
                 <div>
-                    <h1 class="bg-black text-center text-white font-bold text-3xl p-6 rounded-t-2xl">Contact</h1>
+                    <h1 class="bg-black text-center text-white font-bold text-3xl 2xl:text-7xl p-6 rounded-t-2xl">Contact Me</h1>
                     <div>
-                        <div>
-                            <p>This is how you can contact me...</p> 
+                        <div class="bg-white bg-opacity-25">
+                            <p class="font-light text-lg ml-4 sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl 2xl:p-10">Here's how you can connect with me...</p> 
                         </div>
-                        <div class="p-3 pt-0 text-white ">
-                            <div class="p-5 border-2 border-black m-7 flex items-center">
-                                <div class="image-container style= height: 100%;">
-                                    <img src="/assets/fb_logo.png" alt="facebook" style="height: 100%; width: auto;">
-                                </div>
+                        <div class=" pt-4 pb-5 text-white mx-8 grid sm:grid-cols-2 gap-x-5 sm:mx-5">
+                            <div class="rounded-full bg-green-900 hover:bg-green-800 mb-4 border-2 border-black flex items-center">
+                            <img src="/assets/fb.png" alt="fb contact" class="px-2 sm:h-20  lg:h-28 xl:h-36 2xl:h-60 w-auto">
                                 
-                                <p>Jade Abadiano Jaballa</p>
                             </div>
-                            <div class="p-5 border-2 border-black m-7">
-                                <p>m.me/jade.jaballa</p>
+                            <div class="rounded-full  bg-green-900 hover:bg-green-800 mb-4 border-2 border-black flex items-center">
+                               <img src="/assets/msngrcntc.png" alt="Messenger Contact" class="px-2 sm:px-4 sm:h-20 lg:h-28 xl:h-36 2xl:h-60 w-auto">
                             </div>
-                            <div class="p-5 border-2 border-black m-7 text-xs">
-                                <p>jade.abadiano.jaballa@gmail.com</p>
+                            <div class="rounded-full  bg-green-900 hover:bg-green-800 mb-4 border-2 border-black text-xs flex items-center">
+                               <img src="/assets/googlecontc.png" alt="google contact" class="px-2 sm:px-4 sm:h-20 lg:h-28 xl:h-36 2xl:h-60 w-auto">
                             </div>
-                            <div class="p-5 border-2 border-black m-7">
-                                +63-993-310-3211
+                            <div class="mb-4   bg-green-900 hover:bg-green-800 rounded-full border-2 border-black flex items-center">
+                               <img src="/assets/phone.png" alt="Contact Number" class="px-2 sm:px-4 sm:h-20 lg:h-28 xl:h-36 2xl:h-60 w-auto">
+                            </div>
+                            <div class="mb-4   bg-green-900 hover:bg-green-800 rounded-full border-2 border-black flex items-center">
+                                <img src="/assets/gitcontact.png" alt="github account" class="px-2 sm:px-4 sm:h-20 lg:h-28 xl:h-36 2xl:h-60 w-auto">
                             </div>
 
                         </div>
@@ -203,6 +210,8 @@ img {
                 </div>
             </section>
             
+            
+
         </main>
     </div>
     
