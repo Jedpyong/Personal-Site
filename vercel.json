@@ -13,7 +13,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/dest/$1"
+            "dist": "/dist/$1"
         }
     ]
 }
