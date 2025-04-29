@@ -4,242 +4,367 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <title>Jade's Personal Website </title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Jade's Personal Website</title>
     <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d3748;
+            --accent-color: #48bb78;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        
         .background-image {
             background-image: url('/assets/bg3.svg');
             background-size: cover;
-            background-position:center ;
-            height: full;
-
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
         }
-    </style>
-     <style>
+        
         .background-image2 {
             background-image: url('/assets/try.png');
-            background-size:cover ;
-            background-position:center ;
-            height: full;
-            
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
-    </style>
-    <style> 
-     .scroll-offset {
-        scroll-margin-top: 110px;
-     
-    }
-    </style>
-    <style>
+        
+        .scroll-offset {
+            scroll-margin-top: 110px;
+        }
+        
         .text-outline {
-          color: white;
-          text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+            color: white;
+            text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
         }
-      </style>
-       <style>
+        
         .text-whiteoutline {
-          color: rgb(5, 61, 5);
-          text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+            color: rgb(5, 61, 5);
+            text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
         }
-      </style>
-       <style>
+        
         .text-c3 {
-          color: black;
-          text-shadow:   -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+            color: black;
+            text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
         }
-      </style>
-
-      <style>
-        .image-container {
-    display: inline-block;
-    height: 100%;
-}
-
-img {
-    height: 100%;
-    width: auto;
-    display: block;
-}
-      </style>
-      <style>
-        .flex-container{
-            display:flex;
-            align-items: center;
-        }
-
-        .responsive-image{
-            width: auto;
-            height: 100%;
-            max-height: 4rem;
-        }
-      </style>
-       <style>
+        
         .indent {
-          text-indent: 2em; /* Adjust the indent size here */
+            text-indent: 2em;
         }
-      </style>
-      <style>
-        .no-scrollbar::-webkit-scrollbar{
+        
+        .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
-
+        
         .no-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+        
         html {
             scroll-behavior: smooth;
         }
-      </style>
-
+        
+        .btn-hover-effect {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .btn-hover-effect:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.5);
+            border-color: var(--accent-color);
+        }
+        
+        @media (max-width: 640px) {
+            .hero-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .hero-image {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+            
+            .nav-links {
+                justify-content: center !important;
+                margin-top: 1rem;
+            }
+        }
+    </style>
 </head>
-<body >
-   
-        <header class="z-10 bg-black text-white p-5 fixed w-full">
-            <h1 class = "text-3xl 2xl:text-6xl font-bold mx-2 sm:mx-6">Portfolio! </h1>
+<body class="bg-gray-100">
+    <header class="z-50 bg-black text-white p-4 fixed w-full shadow-lg">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+            <h1 class="text-2xl sm:text-3xl 2xl:text-5xl font-bold mb-2 sm:mb-0">Portfolio!</h1>
             <nav>
-                <ul class="flex justify-end 2xl:text-4xl space-x-5 xl:space-x-8 mr-2 sm:mr-14 md:mr-20 lg:mr-28 xl:mr-32">
-                    <li><a href="#projects" class="hover:underline">Project</a></li>
-                    <li><a href="#about" class="hover:underline">About</a></li>
-                    <li><a href="#contact" class="hover:underline">Contact</a></li>
+                <ul class="flex space-x-4 sm:space-x-6 md:space-x-8">
+                    <li><a href="#projects" class="hover:text-green-400 transition-colors duration-300 text-sm sm:text-base 2xl:text-3xl">Projects</a></li>
+                    <li><a href="#about" class="hover:text-green-400 transition-colors duration-300 text-sm sm:text-base 2xl:text-3xl">About</a></li>
+                    <li><a href="#contact" class="hover:text-green-400 transition-colors duration-300 text-sm sm:text-base 2xl:text-3xl">Contact</a></li>
                 </ul>
             </nav>
-        </header>
-        <main class="pt-20 sm:pt-14" >
-            <div class=" background-image p-5 sm:p-10 2xl:pt-20">
-
-                    <section class = " max-w-full scroll-offset mb-10 grid grid-cols-1 sm:grid-cols-12 rounded-bl-3xl rounded-br-3xl">
-                        <div class=" flex justify-center xl:justify-end xl:items-center xl:h-screen sm:pb-10 col-span-4 xl:col-span-6">
-                            <img src="../assets/jadepro.svg" alt="handsome pic" class="w-full sm:w-72 xl:w-full xl:h-full xl:pr-10 h-auto mx-5 xl:mx-0 grid ">
-                        </div>
-                        <div class="flex flex-col justify-center text-white font-sans col-span-8 xl:col-span-6 ">
-                          <div class="background-image2 rounded-lg">
-                            <p class="pl-5 sm:pl-10 xl:pl-20 sm:mt-2 mt-2 2xl:mt-5">
-                                <span class=" font-bold p-2 sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl">Hello, I am        </span>
-                                <span class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl xl:mx-2 font-bold text-outline ">   Jade !</span>
-                              </p>
-                                                          
-                                <h1 class="font-extrabold text-whiteoutline text-center sm:text-left sm:ml-4 sm:mt-1 2xl:mt-8 xl:mx-2">
-                                    <span class="lg:text-xl xl:text-2xl 2xl:text-5xl">I'M A </span>
-                                    <span class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-9xl">PROGRAMMER</span> 
-                                </h1>
-                                <p class="lg:pr-0 text-xs sm:text-sm lg:text-lg xl:text-xl 2xl:text-4xl pl-6 sm:pl-12 xl:pl-24 sm:mt-1 2xl:mt-5">
-                                    <span>That turns your </span>
-                                    <span class="font-extrabold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl text-black">visions</span> 
-                                    <span>into </span>
-                                    <span class="font-extrabold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl 2xl:pb-10">virtual realities. </span>
-                                    <span>
-                                    <div class="relative flex justify-end mx-3 p-4 pr-0 sm:mx-10 2xl:my-10">
-                                        <img src="/assets/arrow.png" alt="arrow" class="w-16 xl:w-20 object-contain">
-                                        <div class="absolute inset-0 flex items-center justify-end mx-7">
-                                            <h4 class="text-xs sm:text-sm lg:text-lg 2xl:text-4xl font-semibold xl:mr-5 2xl:mr-10 "><a href="../dist/pages/resume.html" class="hover:text-green-500">Go to Resume</a></h4>
-                                        </div>
-                                        <div></div>
-                          </div>
-                           
-                                </div></span>
-                            </p>
-                          
-                            
-                        </div>
-                    </section>
-
-                    
-           
+        </div>
+    </header>
     
-            <section id="projects" class=" scroll-offset background-image2 max-w-full mb-10 rounded-tl-2xl rounded-tr-2xl rounded-b-2xl text-white ">
-                <h1 class="text-center bg-black text-3xl 2xl:text-7xl font-bold p-6 rounded-tl-2xl rounded-tr-2xl ">PROJECT</h1>
-                <div class="opacity-100 2xl:mx-32">
-                
-                <div>
-                    <div >
-                        <h3 class="text-center text-2xl font-semibold pt-5 text-outline sm:text-4xl 2xl:text-6xl">GrouCord App</h3>
-                        <div class="flex justify-center items-start">
-                            <img src="/assets/groucord.png" alt="pogi" class="w-48 sm:w-64 h-auto object-contain ">
-                        </div>
-                        
+    <main class="pt-20 sm:pt-16">
+        <div class="background-image">
+            <section id="hero" class="scroll-offset container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 2xl:py-24">
+                <div class="hero-grid grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="hero-image lg:col-span-5 flex justify-center">
+                        <img src="../assets/jadepro.svg" alt="Jade's professional photo" 
+                             class="w-full max-w-xs sm:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl rounded-lg shadow-2xl border-4 border-white">
                     </div>
-                    <div>
-                        <p class="leading-relaxed p-5 font-light sm:text-lg sm:p-10 lg:text-2xl 2xl:text-5xl"><span class="text-outline font-semibold">GrouCord</span> <span class="font-extralight italic">(Group Coordinator App)</span> is an application developed to enhance planning, management, and coordination within a group, facilitating the creation of group projects and streamlining other collaborative activities.</p>
-                    </div>
-
                     
-                </div>
-              
-               </div>
-               
-            </section>
-
-            <section id="about" class="scroll-offset background-image2 max-w-full mb-10 rounded-t-2xl rounded-b-2xl" >
-                <div>
-                    <h1 class="bg-black text-center text-white font-bold text-3xl 2xl:text-7xl p-6 rounded-t-2xl ">About Me</h1>
-                    <div>
-                        <div class="bg-white bg-opacity-30 rounded-b-xl border-b-8 border-black grid grid-cols-10 items-center sm:text-xl lg:text-3xl 2xl:text-5xl">
-                            <div class="col-span-6 m-2 2xl:col-span-8 ">
-                                <p class="from-neutral-700 font-normal ml-2 grid justify-center">Hey There! Let me tell you a few things...</p>
+                    <div class="lg:col-span-7 text-white">
+                        <div class="background-image2 rounded-lg p-6 sm:p-8 shadow-lg">
+                            <div class="mb-4">
+                                <p class="text-xl sm:text-2xl lg:text-3xl 2xl:text-5xl font-bold">
+                                    Hello, I am <span class="text-3xl sm:text-4xl lg:text-5xl 2xl:text-7xl font-bold text-outline ml-2">Jade!</span>
+                                </p>
                             </div>
-                                <img src="/assets/jadepic.png" alt="jade image" class="col-span-4 2xl:col-span-2 grid justify-self-end">
-        
-
-                        </div>
-                        <div class=" text-white p-7 font-light sm:text-lg lg:text-2xl 2xl:text-5xl">
-                            <p class="indent leading-relaxed"> <span>I am </span><span class="font-semibold text-outline"> Jade A. Jaballa</span>. A curious and cautious programmer for you. I may not look like it, act like it or sounds like it, but I'm certainly an <span class="font-semibold text-outline">overthinker</span>  and a <span class="text-outline font-semibold">critical thinker </span>that made me able to become a <span class="text-outline font-semibold">problem solver</span>.  </p>
-                            <p class="leading-relaxed">Did you know that because of this characteristics of mine, I almost feel like I'm a <span class="text-outline font-semibold">dumb?</span> It's funny how I overthink and question even the most <span class="text-outline font-semibold">simple</span> and <span class="text-outline font-semibold">obvious</span> things that occurs.</p>
-                            <p class="indent leading leading-relaxed">However, <span class="text-outline font-semibold">Paulo Coelho</span> once said, <span class="text-outline font-semibold">"The simple things are also the most extraordinary things, and only the wise can see them."</span></p>
-                            <p class="indent leading-relaxed">So if you wanna see those <span class="text-outline font-semibold">extraordinary things</span> come into <span class="text-outline font-semibold">virtual reality</span>, reach out and let's work it out. Enjoy the <span class="text-outline font-semibold">simple</span> things and I'll deal on what <span class="text-outline font-semibold">complicates</span>.</p>
+                            
+                            <h1 class="mb-6">
+                                <span class="text-xl sm:text-2xl lg:text-3xl 2xl:text-5xl block sm:inline">I'M A </span>
+                                <span class="text-4xl sm:text-5xl lg:text-6xl 2xl:text-8xl font-extrabold text-whiteoutline block sm:inline">PROGRAMMER</span>
+                            </h1>
+                            
+                            <p class="text-sm sm:text-base lg:text-lg 2xl:text-3xl mb-8">
+                                That turns your <span class="font-bold text-2xl sm:text-3xl lg:text-4xl 2xl:text-6xl text-black">visions</span> 
+                                into <span class="font-bold text-2xl sm:text-3xl lg:text-4xl 2xl:text-6xl">virtual realities.</span>
+                            </p>
+                            
+                            <div class="flex justify-end items-center group">
+                                <a href="../dist/pages/resume.html" class="flex items-center hover:no-underline">
+                                    <span class="text-sm sm:text-base lg:text-lg 2xl:text-3xl font-semibold mr-3 group-hover:text-green-400 transition-colors">Go to Resume</span>
+                                    <img src="/assets/arrow.png" alt="arrow" class="w-12 sm:w-16 transform group-hover:translate-x-2 transition-transform">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </section>
-
-            <section id="contact" class="scroll-offset background-image2 max-w-full mb-10 rounded-t-2xl rounded-b-2xl">
-                <div>
-                    <h1 class="bg-black text-center text-white font-bold text-3xl 2xl:text-7xl p-6 rounded-t-2xl">Contact Me</h1>
-                    <div>
-                        <div class="bg-white bg-opacity-25">
-                            <p class="font-light text-lg ml-4 sm:text-xl lg:text-2xl xl:text-3xl 2xl:text-5xl 2xl:p-10">Here's how you can connect with me...</p> 
+        </div>
+        
+        <section id="projects" class="scroll-offset background-image2 py-10 sm:py-16 2xl:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-black text-white rounded-t-2xl overflow-hidden shadow-xl">
+                    <h1 class="text-center text-2xl sm:text-3xl 2xl:text-6xl font-bold py-4 sm:py-6">PROJECTS</h1>
+                </div>
+                
+                <!-- Project 1 -->
+                <div onclick="window.location.href='https://github.com/VSUrhuel/voyager'"  class="bg-white bg-opacity-90 hover:bg-opacity-100 transition-all duration-300 p-6 shadow-lg">
+                    <div class="flex flex-col lg:flex-row items-center gap-6">
+                        <div class="w-full lg:w-1/2 flex justify-center">
+                            <img src="/assets/eduvate_logo (1).png" alt="Project Voyager" 
+                                 class="w-full max-w-md rounded-xl shadow-xl border-2 border-gray-300 transform hover:scale-105 transition duration-300">
                         </div>
-                        <div>
-                            <div>
-                                <form class="bg-white bg-opacity-10 sm:px-20 lg:px-40 xl:px-56 2xl:px-96 shadow-md rounded-b px-8 pt-6 pb-8">
-                                    <div class="mb-4">
-                                        <label for="name" class="block text-black text-sm xl:text-lg 2xl:text-4xl font-bold mb-2">Name</label>
-                                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-green-900 leading-tight focus:outline-none focus:shadow-outline xl:h-14 2xl:h-20 2xl:text-3xl" type="text" name="" id="name" placeholder="Your Name">
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="email" class="block  text-black text-sm xl:text-lg 2xl:text-4xl font-bold mb-2">Email</label>
-                                        <input type="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-green-900 leading-tight focus:outline-none focus:shadow-outline xl:h-14 2xl:h-20 2xl:text-3xl" name="email" placeholder="Email Address">
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="message" class="block text-black text-sm xl:text-lg 2xl:text-4xl font-bold mb-2">Message</label>
-                                        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-green-900 leading-tight focus:outline-none focus:shadow-outline xl:h-32 2xl:h-44 2xl:text-3xl" id="message" placeholder="Your Message" rows="4"></textarea>
-                                    </div>
-                                    <div class="flex justify-center xl:h-14 2xl:h-28 ">
-                                        <button class="bg-black hover:opacity-50 text-white font-bold py-2 px-4 rounded-2xl focus:outline-none focus:shadow-outline 2xl:text-4xl" type="submit">Send Message</button>
-                                    </div>
-                                </form>
-                            </div>
+                        <div class="w-full lg:w-1/2 text-center lg:text-left">
+                            <h3 class="text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl font-bold text-gray-800">
+                                Project Voyager
+                            </h3>
+                            <div class="text-gray-500 text-lg mt-2">2025</div>
                         </div>
-                        <div class="flex justify-center">
-                            <div class="p-8 pt-5 sm:p-16 max-w-2xl grid justify-self-center">
-                                <div class="flex flex-row justify-around gap-2 xl:gap-4">
-                                    <a href="https://www.facebook.com/jade.jaballa"><img src="/assets/fb_logo.png" alt="fb contact" class="h-full w-auto object-contain"></a>
-                                    <a href="https://m.me/jade.jaballa"><img src="/assets/msngr.png" alt="Messenger Contact" class="h-full w-auto object-contain"></a>
-                                    <a href="mailto:jade.abadiano.jaballa@gmail.com"><img src="/assets/google.png" alt="google contact" class="h-full w-auto object-contain"></a>
-                                    <a href="https://github.com/Jedpyong"><img src="/assets/github.png" alt="github account" class="h-full w-auto object-contain"></a>
-                                    <a href="tel:+639933103211"><img src="/assets/phonecntc.svg" alt="Contact Number" class=" h-full w-auto object-contain"></a>
+                    </div>
+                </div>
+        
+                <!-- Project 2 -->
+                <div onclick="window.location.href='https://vsu-lhs-connect-system-six.vercel.app/'"  class="bg-white bg-opacity-90 hover:bg-opacity-100 transition-all duration-300 p-6 shadow-lg">
+                    <div class="flex flex-col lg:flex-row items-center gap-6">
+                        <div class="w-full lg:w-1/2 flex justify-center">
+                            <img src="/assets/final-logo-1.png" alt="Guidance Facilitation System" 
+                                 class="w-full max-w-md rounded-xl shadow-xl border-2 border-gray-300 transform hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="w-full lg:w-1/2 text-center lg:text-left">
+                            <h3 class="text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl font-bold text-gray-800">
+                                Guidance Facilitation System
+                            </h3>
+                            <div class="text-gray-500 text-lg mt-2">2025</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Project 3 -->
+                <div onclick="window.location.href='https://github.com/Jedpyong/Language-Classification'" class="bg-white bg-opacity-90 hover:bg-opacity-100 transition-all duration-300 p-6 shadow-lg rounded-b-2xl">
+                    <div class="flex flex-col lg:flex-row items-center gap-6">
+                        <div class="w-full lg:w-1/2 flex justify-center">
+                            <img src="/assets/Screenshot (103).png" alt="VersaTula" 
+                                 class="w-full max-w-md rounded-xl shadow-xl border-2 border-gray-300 transform hover:scale-105 transition duration-300">
+                        </div>
+                        <div class="w-full lg:w-1/2 text-center lg:text-left">
+                            <h3 class="text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl font-bold text-gray-800">
+                                Text Detection Game
+                            </h3>
+                            <div class="text-gray-500 text-lg mt-2">2024</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="scroll-offset background-image2 py-10 sm:py-16 2xl:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-black text-white rounded-t-2xl overflow-hidden shadow-xl">
+                    <h1 class="text-center text-2xl sm:text-3xl 2xl:text-6xl font-bold py-4 sm:py-6">ABOUT ME</h1>
+                </div>
+                
+                <div class="bg-white bg-opacity-80 rounded-b-2xl overflow-hidden shadow-lg">
+                    <div class="bg-white bg-opacity-30 border-b-4 border-black p-4 sm:p-6 flex flex-col sm:flex-row items-center">
+                        <div class="flex-1 mb-4 sm:mb-0">
+                            <p class="text-sm sm:text-base lg:text-lg 2xl:text-3xl text-gray-800">
+                                Hey There! Let me tell you a few things...
+                            </p>
+                        </div>
+                        <img src="/assets/jadepic.png" alt="Jade" 
+                             class="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 2xl:w-64 2xl:h-64 rounded-full border-4 border-white shadow-md">
+                    </div>
+                    
+                    <div class="p-6 sm:p-8 lg:p-10 2xl:p-16 text-gray-800">
+                        <p class="indent text-sm sm:text-base lg:text-lg 2xl:text-3xl mb-4 leading-relaxed">
+                            I am <span class="font-semibold text-outline">Jade A. Jaballa</span>. A curious and cautious programmer for you. 
+                            I may not look like it, act like it or sound like it, but I'm certainly an 
+                            <span class="font-semibold text-outline">overthinker</span> and a 
+                            <span class="text-outline font-semibold">critical thinker</span> that made me able to become a 
+                            <span class="text-outline font-semibold">problem solver</span>.
+                        </p>
+                        
+                        <p class="text-sm sm:text-base lg:text-lg 2xl:text-3xl mb-4 leading-relaxed">
+                            Did you know that because of this characteristic of mine, I almost feel like I'm a 
+                            <span class="text-outline font-semibold">dumb?</span> It's funny how I overthink and question even the most 
+                            <span class="text-outline font-semibold">simple</span> and 
+                            <span class="text-outline font-semibold">obvious</span> things that occur.
+                        </p>
+                        
+                        <p class="indent text-sm sm:text-base lg:text-lg 2xl:text-3xl mb-4 leading-relaxed">
+                            However, <span class="text-outline font-semibold">Paulo Coelho</span> once said, 
+                            <span class="text-outline font-semibold italic">"The simple things are also the most extraordinary things, and only the wise can see them."</span>
+                        </p>
+                        
+                        <p class="indent text-sm sm:text-base lg:text-lg 2xl:text-3xl leading-relaxed">
+                            So if you wanna see those <span class="text-outline font-semibold">extraordinary things</span> come into 
+                            <span class="text-outline font-semibold">virtual reality</span>, reach out and let's work it out. Enjoy the 
+                            <span class="text-outline font-semibold">simple</span> things and I'll deal on what 
+                            <span class="text-outline font-semibold">complicates</span>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="scroll-offset background-image2 py-10 sm:py-16 2xl:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-black text-white rounded-t-2xl overflow-hidden shadow-xl">
+                    <h1 class="text-center text-2xl sm:text-3xl 2xl:text-6xl font-bold py-4 sm:py-6">CONTACT ME</h1>
+                </div>
+                
+                <div class="bg-white bg-opacity-80 rounded-b-2xl shadow-lg">
+                    <div class="p-6 sm:p-8 lg:p-10 2xl:p-16">
+                        <p class="text-sm sm:text-base lg:text-lg 2xl:text-3xl mb-6 sm:mb-8 lg:mb-10 text-center">
+                            Here's how you can connect with me...
+                        </p>
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <form action="https://formspree.io/f/xanoqqyr" method="POST" class="space-y-4 sm:space-y-6">
+                                <div>
+                                    <label for="name" class="block text-sm sm:text-base lg:text-lg 2xl:text-3xl font-semibold mb-2">Name</label>
+                                    <input type="text" id="name" name="name" required
+                                           class="form-input w-full px-4 py-2 sm:py-3 2xl:py-6 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 text-sm sm:text-base 2xl:text-3xl">
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-sm sm:text-base lg:text-lg 2xl:text-3xl font-semibold mb-2">Email</label>
+                                    <input type="email" id="email" name="email" required
+                                           class="form-input w-full px-4 py-2 sm:py-3 2xl:py-6 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 text-sm sm:text-base 2xl:text-3xl">
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-sm sm:text-base lg:text-lg 2xl:text-3xl font-semibold mb-2">Message</label>
+                                    <textarea id="message" name="message" rows="4" required
+                                              class="form-input w-full px-4 py-2 sm:py-3 2xl:py-6 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 text-sm sm:text-base 2xl:text-3xl"></textarea>
+                                </div>
+                                
+                                <div class="pt-2">
+                                    <button type="submit" 
+                                            class="btn-hover-effect bg-black text-white px-6 py-2 sm:px-8 sm:py-3 2xl:px-12 2xl:py-6 rounded-full text-sm sm:text-base 2xl:text-3xl font-semibold shadow-md transition-all duration-300 hover:bg-gray-800">
+                                        Send Message
+                                    </button>
+                                </div>
+                            </form>
+                            
+                            <div class="order-1 lg:order-2 flex flex-col items-center justify-center">
+                                <div class="grid grid-cols-3 sm:grid-cols-5 gap-4 sm:gap-6 w-full max-w-md">
+                                    <a href="https://www.facebook.com/jade.jaballa" class="social-icon">
+                                        <img src="/assets/fb_logo.png" alt="Facebook" class="w-full h-auto rounded-lg hover:shadow-lg">
+                                    </a>
+                                    <a href="https://m.me/jade.jaballa" class="social-icon">
+                                        <img src="/assets/msngr.png" alt="Messenger" class="w-full h-auto rounded-lg hover:shadow-lg">
+                                    </a>
+                                    <a href="mailto:jade.abadiano.jaballa@gmail.com" class="social-icon">
+                                        <img src="/assets/google.png" alt="Gmail" class="w-full h-auto rounded-lg hover:shadow-lg">
+                                    </a>
+                                    <a href="https://github.com/Jedpyong" class="social-icon">
+                                        <img src="/assets/github.png" alt="GitHub" class="w-full h-auto rounded-lg hover:shadow-lg">
+                                    </a>
+                                    <a href="tel:+639933103211" class="social-icon">
+                                        <img src="/assets/phonecntc.svg" alt="Phone" class="w-full h-auto rounded-lg hover:shadow-lg">
+                                    </a>
+                                </div>
+                                
+                                <div class="mt-8 sm:mt-12 text-center">
+                                    <p class="text-xs sm:text-sm lg:text-base 2xl:text-2xl text-gray-700">
+                                        Feel free to reach out through any of these platforms or use the contact form.
+                                    </p>
                                 </div>
                             </div>
-                        </div>    
-                      
+                        </div>
                     </div>
                 </div>
-            </section>
-            
-            
-
-        </main>
-    </div>
+            </div>
+        </section>
+    </main>
     
+    <footer class="bg-black text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm sm:text-base 2xl:text-2xl">
+                &copy; <span id="year"></span> Jade Jaballa. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple script to update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>

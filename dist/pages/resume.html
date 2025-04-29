@@ -9,230 +9,508 @@
         .background-image {
             background-image: url('/assets/bg3.svg');
             background-size: cover;
-            background-position:center ;
-            height: full;
-
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
         }
-    </style>
-     <style>
+        
         .background-image2 {
             background-image: url('/assets/try.png');
-            background-size:cover ;
-            background-position:center ;
-            height: full;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
-    </style>
-    <style> 
-     .scroll-offset {
-        scroll-margin-top: 110px; 
-    }
-    </style>
-    <style>
-        .text-outline {
-          color: white;
-          text-shadow: -2px -2px 0 #000, 1px -1px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
-        }
-      </style>
-</head>
-<body>
-   
-        <header class="z-10 bg-black text-white p-5 fixed w-full grid grid-cols-12">
-            <div>
-                <a href="../index.html"><img src="/assets/back.png" alt="button" class="min-w-fit h-7 lg:h-10 2xl:h-16 col-span-2 items-center pt-2"></a> 
-            </div>
-           <div class="col-span-11">
-            <h1 class = " text-3xl 2xl:text-6xl font-bold">Resume!</h1>
-            <nav>
-                <ul class="flex justify-end space-x-5 2xl:space-x-10 mr-2 sm:mr-14 md:mr-20 lg:mr-28 xl:mr-32 xl:text-xl 2xl:text-4xl">
-                    <li><a href="#education" class="hover:underline">Education</a></li>
-                    <li><a href="#skills" class="hover:underline">Skills</a></li>
-                    <li><a href="#extra" class="hover:underline">Xtra</a></li>
-                </ul>
-            </nav>
-           </div>
-          
-            
-           
-        </header>
-        <main class="pt-20 sm:pt-14" >
-
-            <div class=" background-image p-5 sm:p-10">
-            <section class = "background-image2 max-w-full scroll-offset mb-10 grid grid-cols-1 sm:grid-cols-2 rounded-bl-3xl rounded-br-3xl">
-               
-                <div class=" flex flex-col justify-center p-5 2xl:p-20 pb-0 sm:pb-8 text-white font-sans sm:text-center">
-                    <h3 class="text-xl font-semibold text-outline sm:text-3xl lg:text-4xl 2xl:text-6xl pb-3 sm:pb-5 ">Hey It's me again! </h3>
-                    <p class="sm:text-2xl 2xl:text-4xl">Check it out—this is where I currently reside: Brgy. Tinag-an, Albuera, Leyte!</p>
-                </div>
-                <div class="bg-transparent flex justify-center sm:pb-10 sm:pt-8 p-3">
-                    <img src="/assets/tinag-an.png" alt="adress image" class="w-full h-auto mx-5 rounded-t-lg rounded-b-lg">
-                </div>
-            </section>
-    
-            <section id="education" class=" scroll-offset background-image2 max-w-full mb-10 rounded-tl-2xl rounded-tr-2xl rounded-b-2xl text-white ">
-                <h1 class="text-center bg-black text-xl sm:text-3xl 2xl:text-5xl font-bold p-6 rounded-tl-2xl rounded-tr-2xl ">EDUCATIONAL BACKGROUND</h1>
-                <div>
-                
-                <div class="shadow-2xl ">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 items-center">
-                        <div class="pt-8" >  
-                            <div class="flex justify-center items-start">
-                                <img src="/assets/vsu.png" alt="College" class="w-48 sm:w-64 2xl:w-96 h-auto object-contain ">
-                            </div>
-                            <h3 class="text-center text-2xl font-semibold text-outline sm:text-4xl 2xl:text-5xl">Visayas State University</h3>
-                            <h6 class="text-center font-thin sm:text-xl 2xl:text-3xl sm:pb-8">2022-present</h6>
-                            
-                        </div>
-                        <div class="flex flex-col justify-center">
-                            <p class="p-5 sm:p-10 font-light 2xl:font-thin leading-relaxed text-center lg:text-xl xl:text-2xl 2xl:text-5xl">Currently in my 3rd year of study at Visayas State University-Main Campus, Baybay City, Leyte, pursuing Bachelor of Science in Computer Science.</p>
-                            <div class="relative flex justify-center">
-                                <img src="/assets/paint.png" alt="Image" class="w-full h-7 sm:w-96 lg:h-10 xl:h-12 2xl:h-14 ">
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                  <h2 class="text-white text-xs sm:text-base lg:text-lg xl:text-3xl 2xl:text-4xl font-normal">Achievement</h2>
-                                </div>
-                              </div>
-                            <div class="p-5 pt-1 grid justify-center">
-                                <div class=" w-full lg:w-96 2xl:w-1/2 h-auto grid justify-self-center">
-                                    <img src="/assets/vsuawards.jfif" alt="awards" class="sm:w-full h-auto rounded-t-lg rounded-b-lg">
-                                </div>
-                                <div>
-                                    <p class="pb-5 text-outline text-center font-thin text-xs sm:text-base lg:xl xl:text-2xl 2xl:text-4xl">President's Lister, Computer Science Honor Student!</p>
-                                </div>
-                               
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
-                <div class="grid grid-cols-1 items-center sm:grid-cols-2 shadow-2xl">
-                    <div class="pt-8">  
-                        <div class="flex justify-center items-start">
-                            <img src="/assets/ssashs.png" alt="Senior High School" class="w-48 sm:w-64 2xl:w-96 h-auto object-contain ">
-                        </div>
-                        <h3 class="text-center text-2xl font-semibold text-outline sm:text-4xl 2xl:text-5xl">Seguinon Stand Alone Senior High School</h3>
-                        <h6 class="text-center font-thin sm:text-xl 2xl:text-3xl sm:pb-8">2020-2022</h6>
-                        
-                    </div>
-                    <div class="flex flex-col justify-center">
-                        <p class="p-5 sm:p-10 font-light 2xl:font-thin leading-relaxed text-center lg:text-xl xl:text-2xl 2xl:text-5xl ">Studied and finished senior high school with the Science, Technology, Engineering and Mathematics (STEM) strand at the Seguinon Stand Alone Senior High School at Brgy. Seguinon, Albuera, Leyte. </p>
-                        <div class="relative flex justify-center">
-                            <img src="/assets/paint.png" alt="Image" class="w-full h-7 sm:w-96 lg:h-10 xl:h-12 2xl:h-14 ">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                              <h2 class="text-white text-xs sm:text-base lg:text-lg xl:text-3xl 2xl:text-4xl font-normal">Achievement</h2>
-                            </div>
-                          </div>
-                        <div class="p-5 pt-1 grid justify-center">
-                            <div class="w-full lg:w-96 2xl:w-2/3 h-auto grid justify-self-center">
-                                <img src="/assets/ssashsgraduates.jfif" alt="awards" class="sm:w-full h-auto rounded-t-lg rounded-b-lg">
-                            </div>
-                            <div>
-                                <p class="pb-5 text-outline text-center font-thin text-xs sm:text-base lg:xl xl:text-2xl 2xl:text-4xl">Graduated With Honors!</p>
-                            </div>
-                           
-                        </div>
-                    </div>
-
-                    
-                </div>
-               </div>
-               
-            </section>
-
-            <section id="skills" class="scroll-offset background-image2 max-w-full mb-10 rounded-t-2xl rounded-b-2xl" >
-                <div>
-                    <h1 class="bg-black text-center text-white font-bold text-xl sm:text-3xl 2xl:text-5xl p-6 rounded-t-2xl ">RELEVANT SKILLS</h1>
-                   <div class="grid grid-cols-1 sm:grid-cols-2 text-white">
-                    <div class="border-b-4 sm:border-r-4 sm:border-b-0 border-black p-5 pt-3">
-                        <h2 class="flex justify-center items-center text-lg sm:text-xl lg:2xl xl:text-3xl 2xl:text-5xl font-semibold text-outline p-2 pb-3">Hard Skills (Technical Skills)</h2>
-                        <div>
-                            <ul class="list-disc list-inside font-semibold lg:text-xl xl:ml-10  grid xl:grid-cols-2 2xl:text-4xl xl:gap-x-14 xl:gap-y-3 2xl:gap-y-6 2xl:gap-x-40">
-                                <li>Programming Languages:
-                                        <p class="ml-10 font-extralight">x86 Assembly language, C, C++, C#, Java, Python and CSS.</p>
-                                  
-                                </li>
-                                <li>Web Development:
-                                    <p class="ml-10 font-extralight">Back-end, Tailwind</p>
-                                </li>
-                                <li>Database Management:
-                                    <p class="ml-10 font-extralight">MySQL, Firebase</p>
-                                </li>
-                                <li>Data Analysis:
-                                    <p class="ml-10 font-extralight"> Excel, WEKA</p>
-                                </li>
-                               
-                                <li>Graphics Design:
-                                    <p class="ml-10 font-extralight">Figma, Canva</p>
-                                </li>
-                                <li >Project Management Tool:
-                                    <p class="ml-10 font-extralight">Github</p>
-                                </li>
-                                <li>Technical Writing:
-                                    <p class="ml-10 font-extralight">Documentation, Reports</p>
-                                </li>
-                                
-                            </ul>
-                           
-                        </div>
-                    </div>
-                    <div class="p-5 pt-3">
-                        <h2 class="flex justify-center items-center text-lg sm:text-xl lg:2xl xl:text-3xl 2xl:text-5xl font-semibold text-outline p-3">Soft Skills</h2>
-                        <div>
-                            <ul class="list-disc list-inside font-semibold lg:text-xl xl:ml-10 grid xl:grid-cols-2 2xl:text-4xl xl:gap-x-14 xl:gap-y-3 2xl:gap-y-6 2xl:gap-x-40">
-                    
-                                <li>Problem-Solving
-                                    <p class="ml-10 font-extralight">Analytical thinking, Observative, Critical Thinking</p>
-                                </li>
-                                <li>Teamwork
-                                    <p class="ml-10 font-extralight">Collaboration, Conflict Resolution</p>
-                                </li>
-                                <li>Time Management
-                                    <p class="ml-10 font-extralight">Prioritization</p>
-                                </li>
-                                <li>Adaptability
-                                    <p class="ml-10 font-extralight">Flexible, Open-minded</p>
-                                </li>
-                                <li>Leadership</li>
-                                <li>Communication</li>
-                                <li>Work Ethic
-                                    <p class="ml-10 font-extralight">Dependable, Initiative</p>
-                                </li>
-                            </ul>
-
-                        </div>
-                    </div>
-                   </div>
-                   
-                </div>
-
-            </section>
-
-            <section id="extra" class="scroll-offset background-image2 max-w-full mb-10 rounded-t-2xl rounded-b-2xl">
-                <div class=" text-white ">
-                    <h1 class="bg-black text-center font-bold text-xl 2xl:text-5xl sm:text-3xl p-6 rounded-t-2xl">Extra Curricular Activities and Leadership</h1>
-                    <div>
-                        <div class="grid sm:grid-cols-12 shadow-2xl p-5">
-                            <div class="sm:col-span-4 grid justify-self-center items-center p-5">
-                                <img src="/assets/cs3.png" alt="CS3" class="grid justify-self-center">
-                                <h3 class="text-center pt-2 font-semibold text-outline xl:text-2xl 2xl:text-5xl">VSU Computer Science Students Society (Member)</h3>
-                            </div>
-                            <div class="sm:col-span-8 grid justify-center items-center text-center font-light lg:text-xl xl:text-2xl 2xl:text-5xl pt-0">
-                                <p>An active member since 2022 and contributed to initiatives and events, enhancing student engagement and professional development.</p>
-                            </div>
-                        </div>
-                        <div class=" grid sm:grid-cols-12 shadow-2xl p-5">
-                            <div class="sm:col-span-4 sm:order-2 grid justify-center items-center p-5">
-                                <img src="/assets/sk.png" alt="SK Tinag-an" class="justify-self-center">
-                                <h3 class="text-center font-semibold text-outline pt-2 xl:text-2xl 2xl:text-5xl">Sangguniang Kabataan Councilor</h3>
-                            </div>
-                            <div class="sm:col-span-8 grid justify-center items-center text-center font-light lg:text-xl xl:text-2xl 2xl:text-5xl pt-0">
-                                <p>Leads and successfully implemented projects that benefits the community from over 11 different places (sitios) inside our barangay.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         
-        </main>
+        .scroll-offset {
+            scroll-margin-top: 110px; 
+        }
+        
+        .text-outline {
+            color: white;
+            text-shadow: -2px -2px 0 #000, 1px -1px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Better transitions */
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        
+        /* Responsive image container */
+        .img-container {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        /* Card styling */
+        .card {
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        
+        /* Better list styling */
+        .skill-list {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .skill-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Better hover effects */
+        .hover-effect:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <header class="z-50 bg-black text-white p-4 fixed w-full flex items-center justify-between shadow-lg">
+        <div class="flex-shrink-0">
+            <a href="../index.html" class="transition-all hover:opacity-80">
+                <img src="/assets/back.png" alt="Back button" class="h-8 lg:h-10 2xl:h-12">
+            </a> 
+        </div>
+        
+        <div class="flex-grow">
+            <h1 class="text-2xl md:text-3xl 2xl:text-4xl font-bold text-center">Resume</h1>
+        </div>
+        
+        <!-- Desktop Navigation (shown on larger screens) -->
+        <nav class="hidden md:flex flex-shrink-0">
+            <ul class="flex items-center space-x-4 md:space-x-6 lg:space-x-8 xl:text-lg 2xl:text-2xl">
+                <li><a href="#education" class="hover:underline transition-all">Education</a></li>
+                <li><a href="#project" class="hover:underline transition-all">Projects</a></li>
+                <li><a href="#skills" class="hover:underline transition-all">Skills</a></li>
+                <li><a href="#extra" class="hover:underline transition-all">Achievements</a></li>
+                <li>
+                    <a href="/assets/Jaballa-Resume.pdf" download="Jaballa_Resume.pdf" 
+                       class="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 shadow hover:shadow-lg xl:text-md 2xl:text-xl">
+                       <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                           <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                       </svg>
+                       Download Resume
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Mobile Menu Button (shown on small screens) -->
+        <button id="mobile-menu-button" class="md:hidden flex items-center justify-center p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </header>
+    
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="md:hidden hidden fixed inset-0 z-40 bg-black bg-opacity-90 pt-20">
+        <div class="container mx-auto px-4 py-6 flex flex-col items-center space-y-6 text-xl">
+            <a href="#education" class="hover:underline transition-all w-full text-center py-2">Education</a>
+            <a href="#project" class="hover:underline transition-all w-full text-center py-2">Projects</a>
+            <a href="#skills" class="hover:underline transition-all w-full text-center py-2">Skills</a>
+            <a href="#extra" class="hover:underline transition-all w-full text-center py-2">Achievements</a>
+            <a href="/assets/Jaballa-Resume.pdf" download="Jaballa_Resume.pdf" 
+               class="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 shadow hover:shadow-lg w-full max-w-xs">
+               <svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 20 20" fill="currentColor">
+                   <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+               </svg>
+               Download Resume
+            </a>
+        </div>
     </div>
     
+    <script>
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+    
+    <main class="pt-20">
+        <div class="background-image">
+
+            <section id="hero" class="container mx-auto px-4 py-10 sm:py-16 md:py-20">
+                <div class="card hover-effect max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="p-6 sm:p-8 lg:p-10 xl:p-12 flex flex-col justify-center text-white">
+                        <h3 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-outline mb-4 sm:mb-6">
+                            Hey It's me again!
+                        </h3>
+                        <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light">
+                            Check it out—this is where I currently reside: Brgy. Tinag-an, Albuera, Leyte!          
+                        </p>
+                        <p class="text-sm sm:text-md md:text-lg lg:text-xl font-light mt-5">
+                            You may also contact me through:
+                        </p>
+                        <p class="text-sm sm:text-md md:text-lg lg:text-xl font-light">
+                            <span class="font-semibold">Phone Number: </span>  +63 993 310 3211 
+                        </p>
+                        <p class="text-sm sm:text-md md:text-lg lg:text-xl font-light">
+                            <span class="font-semibold">Email Address: </span> jade.abadiano.jaballa@gmail.com
+                        </p>
+                    </div>
+                    <div class="p-4 flex justify-center">
+                        <img src="/assets/tinag-an.png" alt="Address image" 
+                             class="img-container rounded-lg shadow-xl max-h-80 sm:max-h-96 lg:max-h-[30rem] object-cover">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="scroll-offset container mx-auto px-4 py-8 sm:py-12">
+                <div class="max-w-6xl mx-auto">
+                    <h1 class="text-center bg-black text-white text-2xl sm:text-3xl md:text-4xl font-bold py-4 px-6 rounded-t-xl mb-6">
+                        EDUCATIONAL BACKGROUND
+                    </h1>
+                    
+                    <!-- VSU Card -->
+                    <div class="card hover-effect mb-8 overflow-hidden">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div class="p-6 flex flex-col items-center justify-center">
+                                <img src="/assets/vsu.png" alt="College" 
+                                     class="img-container max-w-xs sm:max-w-sm h-auto mb-4">
+                                <h3 class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-outline">
+                                    Visayas State University
+                                </h3>
+                                <h6 class="text-center text-gray-300 text-lg sm:text-xl">
+                                    2022-present
+                                </h6>
+                            </div>
+                            <div class="p-6 flex flex-col justify-center">
+                                <p class="text-white text-lg sm:text-xl md:text-xl lg:text-2xl font-light mb-6">
+                                    Currently in my 3rd year of study at Visayas State University-Main Campus, Baybay City, Leyte, pursuing Bachelor of Science in Computer Science.
+                                </p>
+                                <div class="relative mb-4">
+                                    <img src="/assets/paint.png" alt="Decoration" class="w-full max-w-md mx-auto h-8 sm:h-10">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <h2 class="text-white text-lg sm:text-xl font-medium">Achievement</h2>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <img src="/assets/vsuawards.jfif" alt="Awards" 
+                                         class="img-container rounded-lg max-w-xs sm:max-w-sm mb-4">
+                                    <p class="text-outline text-center text-lg sm:text-xl font-light">
+                                        President's Lister, Computer Science Honor Student!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SSASHS Card -->
+                    <div class="card hover-effect overflow-hidden">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div class="p-6 flex flex-col items-center justify-center">
+                                <img src="/assets/ssashs.png" alt="Senior High School" 
+                                     class="img-container max-w-xs sm:max-w-sm h-auto mb-4">
+                                <h3 class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-outline">
+                                    Seguinon Stand Alone Senior High School
+                                </h3>
+                                <h6 class="text-center text-gray-300 text-lg sm:text-xl">
+                                    2020-2022
+                                </h6>
+                            </div>
+                            <div class="p-6 flex flex-col justify-center">
+                                <p class="text-white text-lg sm:text-xl md:text-xl lg:text-2xl font-light mb-6">
+                                    Studied and finished senior high school with the Science, Technology, Engineering and Mathematics (STEM) strand at the Seguinon Stand Alone Senior High School at Brgy. Seguinon, Albuera, Leyte.
+                                </p>
+                                <div class="relative mb-4">
+                                    <img src="/assets/paint.png" alt="Decoration" class="w-full max-w-md mx-auto h-8 sm:h-10">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <h2 class="text-white text-lg sm:text-xl font-medium">Achievement</h2>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <img src="/assets/ssashsgraduates.jfif" alt="Graduation" 
+                                         class="img-container rounded-lg max-w-xs sm:max-w-sm mb-4">
+                                    <p class="text-outline text-center text-lg sm:text-xl font-light">
+                                        Graduated With Honors!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="project" class="scroll-offset container mx-auto px-4 py-8 sm:py-12">
+                <div class="max-w-6xl mx-auto">
+                    <h1 class="text-center bg-black text-white text-2xl sm:text-3xl md:text-4xl font-bold py-4 px-6 rounded-t-xl mb-6">
+                        PROJECTS
+                    </h1>
+                    
+                    <!-- VSU Card -->
+                    <div class="card hover-effect mb-8 overflow-hidden">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div class="p-6 flex flex-col items-center justify-center">
+                                <img src="/assets/eduvate_logo (1).png" alt="Project Voyager" 
+                                     class="img-container max-w-xs sm:max-w-sm h-auto mb-4">
+                                <h3 class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-outline">
+                                    Eduvate
+                                </h3>
+                                <h6 class="text-center text-gray-300 text-lg sm:text-xl">
+                                    2025
+                                </h6>
+                            </div>
+                            <div class="p-6 flex flex-col justify-center">
+                                <div class="relative mb-4">
+                                    <img src="/assets/paint.png" alt="Decoration" class="w-full max-w-md mx-auto h-8 sm:h-10">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <h2 class="text-white text-xl sm:text-2xl font-semibold">Project Voyager</h2>
+                                    </div>
+                                </div>
+                                <p class="text-white text-md sm:text-lg md:text-lg lg:text-xl font-light mb-6">
+                                    <span class="font-bold">Eduvate</span>  
+                                    is a mobile-based application designed to enhance and streamline the classical mentorship program
+                                    of the Visayas State University Computer Science Students Society (VSU CS3).
+                                </p>
+
+                                <p class="text-white text-md sm:text-lg md:text-lg lg:text-xl font-light mb-6">
+                                    <span class="font-bold">Tech Stack:</span> 
+                                    <span class="italic">Flutter, Firebase</span>
+                                </p>
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card hover-effect mb-8 overflow-hidden">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div class="p-6 flex flex-col items-center justify-center">
+                                <img src="/assets/final-logo-1.png" alt="Guidance Facilitation System" 
+                                     class="img-container max-w-xs sm:max-w-sm h-auto mb-4">
+                                <h3 class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-outline">
+                                    VSU-LHS Connect System 
+                                </h3>
+                                <h6 class="text-center text-gray-300 text-lg sm:text-xl">
+                                    2025
+                                </h6>
+                            </div>
+                            <div class="p-6 flex flex-col justify-center">
+                                <div class="relative mb-4">
+                                    <img src="/assets/paint.png" alt="Decoration" class="w-full max-w-md mx-auto h-8 sm:h-10">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <h2 class="text-white text-xl sm:text-2xl font-semibold">Guidance Facilitation System</h2>
+                                    </div>
+                                </div>
+                                <p class="text-white text-md sm:text-lg md:text-lg lg:text-xl font-light mb-6">
+                                    <span class="font-bold">VSU-LHS Connect System</span> <span class="italic">(Visayas State University Laboratory High School Connect System)</span> 
+                                    is a web-based system designed to facilitate the guidance and counseling process for students, teachers, and parents. 
+                                    It aims to enhance communication, streamline administrative tasks, and provide valuable resources for academic and personal development.
+                                </p>
+
+                                <p class="text-white text-md sm:text-lg md:text-lg lg:text-xl font-light mb-6">
+                                    <span class="font-bold">Tech Stack:</span> 
+                                    <span class="italic">Nuxt, Javascript, Vue, Firebase, HTML, Tailwind CSS</span>
+                                </p>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card hover-effect mb-8 overflow-hidden">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div class="p-6 flex flex-col items-center justify-center">
+                                <img src="/assets/Screenshot (103).png" alt="VersaTula
+                                     class="img-container max-w-xs sm:max-w-sm h-auto mb-4">
+                                <h3 class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-outline">
+                                    VersaTula
+                                </h3>
+                                <h6 class="text-center text-gray-300 text-lg sm:text-xl">
+                                    2024
+                                </h6>
+                            </div>
+                            <div class="p-6 flex flex-col justify-center">
+                                <div class="relative mb-4">
+                                    <img src="/assets/paint.png" alt="Decoration" class="w-full max-w-md mx-auto h-8 sm:h-10">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <h2 class="text-white text-xl sm:text-2xl font-semibold">Text Language Detection Game</h2>
+                                    </div>
+                                </div>
+                                <p class="text-white text-md sm:text-lg md:text-lg lg:text-xl font-light mb-6">
+                                    <span class="font-bold">VersaTula</span> 
+                                    is a simple text language detection game that utilizes a Feed Forward Neural Network machine learning model to identify the language of a given text input.
+                                </p>
+
+                                <p class="text-white text-md sm:text-lg md:text-lg lg:text-xl font-light mb-6">
+                                    <span class="font-bold">Tech Stack:</span> 
+                                    <span class="italic">Python, C#, Google Colab, Flask API</span>
+                                </p>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Skills Section -->
+            <section id="skills" class="scroll-offset container mx-auto px-4 py-8 sm:py-12">
+                <div class="max-w-6xl mx-auto">
+                    <h1 class="text-center bg-black text-white text-2xl sm:text-3xl md:text-4xl font-bold py-4 px-6 rounded-t-xl mb-6">
+                        RELEVANT SKILLS
+                    </h1>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Hard Skills -->
+                        <div class="card hover-effect p-6">
+                            <h2 class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-outline mb-6">
+                                Hard Skills (Technical Skills)
+                            </h2>
+                            <ul class="skill-list">
+                                <li class="mb-4">
+                                    <span class="font-semibold text-white text-lg sm:text-xl">Programming Languages:</span>
+                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">C, C#, Java, Python and JavaScript.</p>
+                                </li>
+                                <li class="mb-4">
+                                    <span class="font-semibold text-white text-lg sm:text-xl">Frameworks:</span>
+                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Nuxt, Vue</p>
+                                </li>
+                                <li class="mb-4">
+                                    <span class="font-semibold text-white text-lg sm:text-xl">Database Management:</span>
+                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">MySQL, Firebase</p>
+                                </li>
+                                <li class="mb-4">
+                                    <span class="font-semibold text-white text-lg sm:text-xl">Data Analysis:</span>
+                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Excel, WEKA</p>
+                                </li>
+                                <li class="mb-4">
+                                    <span class="font-semibold text-white text-lg sm:text-xl">Graphics Design:</span>
+                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Figma, Canva</p>
+                                </li>
+                                <li class="mb-4">
+                                    <span class="font-semibold text-white text-lg sm:text-xl">Project Management Tool:</span>
+                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Github</p>
+                                </li>
+
+                            </ul>
+                        </div>
+                        
+                        <!-- Soft Skills -->
+                        <div class="card hover-effect p-6">
+                            <h2 class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-outline mb-6">
+                                Soft Skills
+                            </h2>
+                            <ul class="skill-list">
+                                <li class="mb-4">
+                                    <span class="font-semibold text-white text-lg sm:text-xl">Problem-Solving</span>
+                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Analytical thinking, Observative, Critical Thinking</p>
+                                </li>
+                                <li class="mb-4">
+                                    <span class="font-semibold text-white text-lg sm:text-xl">Teamwork</span>
+                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Collaboration, Conflict Resolution</p>
+                                </li>
+                                <li class="mb-4">
+                                    <span class="font-semibold text-white text-lg sm:text-xl">Time Management</span>
+                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Prioritization</p>
+                                </li>
+                                <li class="mb-4">
+                                    <span class="font-semibold text-white text-lg sm:text-xl">Adaptability</span>
+                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Flexible, Open-minded</p>
+                                </li>
+                                <li class="mb-4">
+                                    <span class="font-semibold text-white text-lg sm:text-xl">Leadership</span>
+                                </li>
+                                <li class="mb-4">
+                                    <span class="font-semibold text-white text-lg sm:text-xl">Communication</span>
+                                </li>
+                                <li class="mb-4">
+                                    <span class="font-semibold text-white text-lg sm:text-xl">Work Ethic</span>
+                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Dependable, Initiative</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+
+            <!-- Extra Section -->
+            <section id="extra" class="scroll-offset container mx-auto px-4 py-8 sm:py-12">
+                <div class="max-w-6xl mx-auto">
+                    <h1 class="text-center bg-black text-white text-2xl sm:text-3xl md:text-4xl font-bold py-4 px-6 rounded-t-xl mb-6">
+                        Leadership and Achievements
+                    </h1>
+
+                    <div class="card hover-effect p-6">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                            <div class="md:col-span-4 md:order-2 flex flex-col items-center">
+                                <img src="/assets/dost.png" alt="Achiever" class="img-container max-w-xs mb-4">
+                                <h3 class="text-center text-xl sm:text-2xl font-bold text-outline">
+                                    University President's Lister and a DOST-JLSS Scholar
+                                </h3>
+                            </div>
+                            <div class="md:col-span-8 md:order-1 flex items-center">
+                                <p class="text-white text-lg sm:text-xl font-light">
+                                    Awarded for exceptional academic performance in the Computer Science program and 
+                                    recognized for potential in science and technology.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CS3 Card -->
+                    <div class="card hover-effect mb-8 p-6">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                            <div class="md:col-span-4 flex flex-col items-center">
+                                <img src="/assets/cs3.png" alt="CS3" class="img-container max-w-xs mb-4">
+                                <h3 class="text-center text-xl sm:text-2xl font-bold text-outline">
+                                    VSU Computer Science Students Society (Member)
+                                </h3>
+                            </div>
+                            <div class="md:col-span-8 flex items-center">
+                                <p class="text-white text-lg sm:text-xl font-light">
+                                    An active member since 2022 and contributed to initiatives and events, enhancing student engagement and professional development.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SK Card -->
+                    <div class="card hover-effect p-6">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                            <div class="md:col-span-4 md:order-2 flex flex-col items-center">
+                                <img src="/assets/sk.png" alt="SK Tinag-an" class="img-container max-w-xs mb-4">
+                                <h3 class="text-center text-xl sm:text-2xl font-bold text-outline">
+                                    Sangguniang Kabataan Councilor
+                                </h3>
+                            </div>
+                            <div class="md:col-span-8 md:order-1 flex items-center">
+                                <p class="text-white text-lg sm:text-xl font-light">
+                                    Leads and successfully implemented projects that benefits the community from over 11 different places (sitios) inside our barangay.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="bg-black text-white py-6 text-center">
+        <p class="text-sm sm:text-base">© 2023 Jade's Personal Website. All rights reserved.</p>
+    </footer>
 </body>
 </html>
