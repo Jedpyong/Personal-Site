@@ -1,516 +1,613 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <title>Jade's Personal Website—Resume</title>
-    <style>
-        .background-image {
-            background-image: url('/assets/bg3.svg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-        }
-        
-        .background-image2 {
-            background-image: url('/assets/try.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        
-        .scroll-offset {
-            scroll-margin-top: 110px; 
-        }
-        
-        .text-outline {
-            color: white;
-            text-shadow: -2px -2px 0 #000, 1px -1px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
-        }
-        
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Better transitions */
-        .transition-all {
-            transition: all 0.3s ease;
-        }
-        
-        /* Responsive image container */
-        .img-container {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-        
-        /* Card styling */
-        .card {
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-            border-radius: 1rem;
-            overflow: hidden;
-        }
-        
-        /* Better list styling */
-        .skill-list {
-            display: grid;
-            gap: 1rem;
-        }
-        
-        @media (min-width: 640px) {
-            .skill-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        /* Better hover effects */
-        .hover-effect:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume — Jade A. Jaballa</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0f0f0f;
+      --ink-muted: #555;
+      --paper: #f8f6f1;
+      --white: #ffffff;
+      --accent: #1a4d2e;
+      --accent-light: #e8f0eb;
+      --border: #e0ddd7;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+      --sidebar-w: 280px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: var(--paper);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 60px;
+    }
+
+    .nav-back {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.875rem; font-weight: 500;
+      color: var(--ink-muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--accent); }
+
+    .nav-center {
+      font-family: var(--serif);
+      font-size: 1.05rem; color: var(--ink);
+    }
+
+    .btn-download {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--white); background: var(--ink);
+      padding: 0.5rem 1.1rem; border-radius: 2px;
+      text-decoration: none; transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .btn-download:hover { background: var(--accent); }
+
+    /* ── PAGE SHELL ── */
+    .page {
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      min-height: calc(100vh - 60px);
+      margin-top: 60px;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 60px;
+      height: calc(100vh - 60px);
+      overflow-y: auto;
+      background: var(--accent);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      padding: 2.5rem 1.75rem;
+      gap: 2rem;
+    }
+
+    /* hide sidebar scrollbar */
+    .sidebar::-webkit-scrollbar { display: none; }
+    .sidebar { scrollbar-width: none; }
+
+    .sidebar-profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .sidebar-photo {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      border: 3px solid rgba(3, 7, 0, 0.35);
+      /* object-fit: cover; */
+      /* background: rgba(255,255,255,0.15); */
+      /* display: flex; align-items: center; justify-content: center; */
+      /* font-size: 2rem; */
+      /* flex-shrink: 0; */
+      overflow: hidden;
+    }
+
+    .sidebar-name {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .sidebar-role {
+      font-size: 0.8rem;
+      font-weight: 400;
+      opacity: 0.7;
+      margin-top: 0.25rem;
+      line-height: 1.4;
+    }
+
+    .sidebar-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .sidebar-section-title {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.55;
+      margin-bottom: 0.65rem;
+    }
+
+    .sidebar-contact {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 0.55rem;
+    }
+
+    .sidebar-contact li {
+      display: flex; align-items: flex-start; gap: 0.6rem;
+      font-size: 0.8rem; line-height: 1.4; opacity: 0.85;
+    }
+
+    .sidebar-contact a {
+      color: inherit; text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+      transition: border-color 0.2s;
+      word-break: break-all;
+    }
+    .sidebar-contact a:hover { border-color: rgba(255,255,255,0.8); }
+
+    .contact-icon { flex-shrink: 0; margin-top: 1px; font-style: normal; }
+
+    .sidebar-nav {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 0.25rem;
+    }
+
+    .sidebar-nav a {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.85rem; font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      padding: 0.45rem 0.6rem;
+      border-radius: 4px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .sidebar-nav a:hover,
+    .sidebar-nav a.active {
+      background: rgba(255,255,255,0.12);
+      color: var(--white);
+    }
+
+    .sidebar-nav a::before {
+      content: '';
+      display: block; width: 5px; height: 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+
+    .sidebar-nav a:hover::before,
+    .sidebar-nav a.active::before {
+      background: var(--white);
+    }
+
+    .sidebar-dl {
+      margin-top: auto;
+    }
+
+    .sidebar-dl a {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      width: 100%;
+      font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--accent); background: var(--white);
+      padding: 0.65rem 1rem; border-radius: 3px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .sidebar-dl a:hover { opacity: 0.85; }
+
+    /* ── MAIN CONTENT ── */
+    .content {
+      padding: 3.5rem 5% 4rem;
+      display: flex; flex-direction: column; gap: 3.5rem;
+      max-width: 860px;
+    }
+
+    /* Section row */
+    .rs {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 2rem;
+    }
+
+    .rs-label {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--accent);
+      padding-top: 0.2rem;
+    }
+
+    .rs-content { display: flex; flex-direction: column; gap: 2rem; }
+
+    /* Entry */
+    .entry { border-left: 2px solid var(--border); padding-left: 1.4rem; }
+
+    .entry-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 1rem; margin-bottom: 0.3rem;
+    }
+
+    .entry-org { font-weight: 600; font-size: 0.975rem; color: var(--ink); }
+
+    .entry-date {
+      font-size: 0.775rem; color: var(--ink-muted);
+      white-space: nowrap; padding-top: 0.15rem;
+    }
+
+    .entry-role {
+      font-size: 0.85rem; color: var(--accent); font-weight: 500;
+      margin-bottom: 0.45rem;
+    }
+
+    .entry-desc {
+      font-size: 0.875rem; line-height: 1.72; color: var(--ink-muted);
+    }
+
+    .entry-tag-row {
+      display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.7rem;
+    }
+
+    .tag {
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border: 1px solid var(--border); border-radius: 2px;
+      color: var(--ink-muted);
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem;
+    }
+
+    .skill-cat-title {
+      font-size: 0.775rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--ink); margin-bottom: 0.55rem;
+    }
+
+    .skill-items { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+    hr { border: none; border-top: 1px solid var(--border); }
+
+    /* ── FOOTER ── */
+    footer {
+      grid-column: 2;
+      border-top: 1px solid var(--border);
+      padding: 1.25rem 5%;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+
+    .footer-copy { font-size: 0.8rem; color: var(--ink-muted); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 820px) {
+      .page { grid-template-columns: 1fr; }
+
+      .sidebar {
+        position: static; height: auto;
+        padding: 2rem 6%;
+        flex-direction: row; flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+
+      .sidebar-profile { flex: 1 1 180px; }
+      .sidebar-contact-block { flex: 1 1 180px; }
+      .sidebar-nav-block { display: none; }
+      .sidebar-dl { margin-top: 0; width: 100%; }
+
+      .content { padding: 2.5rem 6% 3rem; }
+      .rs { grid-template-columns: 1fr; gap: 0.5rem; }
+      .skills-grid { grid-template-columns: 1fr; }
+
+      footer { grid-column: 1; flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+
+    [id] { scroll-margin-top: 80px; }
+  </style>
 </head>
-<body class="bg-gray-900">
-    <header class="z-50 bg-black text-white p-4 fixed w-full flex items-center justify-between shadow-lg">
-        <div class="flex-shrink-0">
-            <a href="../index.html" class="transition-all hover:opacity-80">
-                <img src="/assets/back.png" alt="Back button" class="h-8 lg:h-10 2xl:h-12">
-            </a> 
-        </div>
-        
-        <div class="flex-grow">
-            <h1 class="text-2xl md:text-3xl 2xl:text-4xl font-bold text-center">Resume</h1>
-        </div>
-        
-        <!-- Desktop Navigation (shown on larger screens) -->
-        <nav class="hidden md:flex flex-shrink-0">
-            <ul class="flex items-center space-x-4 md:space-x-6 lg:space-x-8 xl:text-lg 2xl:text-2xl">
-                <li><a href="#education" class="hover:underline transition-all">Education</a></li>
-                <li><a href="#project" class="hover:underline transition-all">Projects</a></li>
-                <li><a href="#skills" class="hover:underline transition-all">Skills</a></li>
-                <li><a href="#extra" class="hover:underline transition-all">Achievements</a></li>
-                <li>
-                    <a href="/assets/Jaballa-Resume.pdf" download="Jaballa_Resume.pdf" 
-                       class="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 shadow hover:shadow-lg xl:text-md 2xl:text-xl">
-                       <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                           <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
-                       </svg>
-                       Download Resume
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        
-        <!-- Mobile Menu Button (shown on small screens) -->
-        <button id="mobile-menu-button" class="md:hidden flex items-center justify-center p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
-    </header>
-    
-    <!-- Mobile Menu (hidden by default) -->
-    <div id="mobile-menu" class="md:hidden hidden fixed inset-0 z-40 bg-black bg-opacity-90 pt-20">
-        <div class="container mx-auto px-4 py-6 flex flex-col items-center space-y-6 text-xl">
-            <a href="#education" class="hover:underline transition-all w-full text-center py-2">Education</a>
-            <a href="#project" class="hover:underline transition-all w-full text-center py-2">Projects</a>
-            <a href="#skills" class="hover:underline transition-all w-full text-center py-2">Skills</a>
-            <a href="#extra" class="hover:underline transition-all w-full text-center py-2">Achievements</a>
-            <a href="/assets/Jaballa-Resume.pdf" download="Jaballa_Resume.pdf" 
-               class="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 shadow hover:shadow-lg w-full max-w-xs">
-               <svg xmlns="http://www.w3.org/2000/svg" class="w-4" viewBox="0 0 20 20" fill="currentColor">
-                   <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
-               </svg>
-               Download Resume
-            </a>
-        </div>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/dist/index.html" class="nav-back">← Portfolio</a>
+  <span class="nav-center">Resume</span>
+  <a href="/assets/Jaballa-Resume.pdf" download="Jaballa_Resume.pdf" class="btn-download">↓ PDF</a>
+</nav>
+
+<div class="page">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+
+    <!-- Profile -->
+    <div class="sidebar-profile">
+      <div class="sidebar-photo">
+        <img src="../../assets/formalJade2.png" alt="Jade's professional photo" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <h1 class="sidebar-name" style="margin-top:1rem">Jade A. Jaballa</h1>
+      <p class="sidebar-role">Software Developer<br>Visayas State University</p>
     </div>
-    
-    <script>
 
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-    </script>
-    
-    <main class="pt-20">
-        <div class="background-image">
+    <hr class="sidebar-divider">
 
-            <section id="hero" class="container mx-auto px-4 py-10 sm:py-16 md:py-20">
-                <div class="card hover-effect max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    <div class="p-6 sm:p-8 lg:p-10 xl:p-12 flex flex-col justify-center text-white">
-                        <h3 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-outline mb-4 sm:mb-6">
-                            Hey It's me again!
-                        </h3>
-                        <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light">
-                            Check it out—this is where I currently reside: Brgy. Tinag-an, Albuera, Leyte!          
-                        </p>
-                        <p class="text-sm sm:text-md md:text-lg lg:text-xl font-light mt-5">
-                            You may also contact me through:
-                        </p>
-                        <p class="text-sm sm:text-md md:text-lg lg:text-xl font-light">
-                            <span class="font-semibold">Phone Number: </span>  +63 993 310 3211 
-                        </p>
-                        <p class="text-sm sm:text-md md:text-lg lg:text-xl font-light">
-                            <span class="font-semibold">Email Address: </span> jade.abadiano.jaballa@gmail.com
-                        </p>
-                    </div>
-                    <div class="p-4 flex justify-center">
-                        <img src="/assets/tinag-an.png" alt="Address image" 
-                             class="img-container rounded-lg shadow-xl max-h-80 sm:max-h-96 lg:max-h-[30rem] object-cover">
-                    </div>
-                </div>
-            </section>
+    <!-- Contact -->
+    <div class="sidebar-contact-block">
+      <p class="sidebar-section-title">Contact</p>
+      <ul class="sidebar-contact">
+        <li>
+          <i class="contact-icon">✉</i>
+          <a href="mailto:jade.abadiano.jaballa@gmail.com">jade.abadiano.jaballa@gmail.com</a>
+        </li>
+        <li>
+          <i class="contact-icon">☎</i>
+          <a href="tel:+639933103211">+63 993 310 3211</a>
+        </li>
+        <li>
+          <i class="contact-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+          </i>
+          <a href="https://github.com/Jedpyong" target="_blank" rel="noopener">github.com/Jedpyong</a>
+        </li>
+        <li>
+          <i class="contact-icon">📍</i>
+          <span>Brgy. Tinag-an, Albuera, Leyte</span>
+        </li>
+      </ul>
+    </div>
 
-            <!-- Education Section -->
-            <section id="education" class="scroll-offset container mx-auto px-4 py-8 sm:py-12">
-                <div class="max-w-6xl mx-auto">
-                    <h1 class="text-center bg-black text-white text-2xl sm:text-3xl md:text-4xl font-bold py-4 px-6 rounded-t-xl mb-6">
-                        EDUCATIONAL BACKGROUND
-                    </h1>
-                    
-                    <!-- VSU Card -->
-                    <div class="card hover-effect mb-8 overflow-hidden">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                            <div class="p-6 flex flex-col items-center justify-center">
-                                <img src="/assets/vsu.png" alt="College" 
-                                     class="img-container max-w-xs sm:max-w-sm h-auto mb-4">
-                                <h3 class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-outline">
-                                    Visayas State University
-                                </h3>
-                                <h6 class="text-center text-gray-300 text-lg sm:text-xl">
-                                    2022-present
-                                </h6>
-                            </div>
-                            <div class="p-6 flex flex-col justify-center">
-                                <p class="text-white text-lg sm:text-xl md:text-xl lg:text-2xl font-light mb-6">
-                                    Currently in my 3rd year of study at Visayas State University-Main Campus, Baybay City, Leyte, pursuing Bachelor of Science in Computer Science.
-                                </p>
-                                <div class="relative mb-4">
-                                    <img src="/assets/paint.png" alt="Decoration" class="w-full max-w-md mx-auto h-8 sm:h-10">
-                                    <div class="absolute inset-0 flex items-center justify-center">
-                                        <h2 class="text-white text-lg sm:text-xl font-medium">Achievement</h2>
-                                    </div>
-                                </div>
-                                <div class="flex flex-col items-center">
-                                    <img src="/assets/vsuawards.jfif" alt="Awards" 
-                                         class="img-container rounded-lg max-w-xs sm:max-w-sm mb-4">
-                                    <p class="text-outline text-center text-lg sm:text-xl font-light">
-                                        Computer Science Honor Student!
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- SSASHS Card -->
-                    <div class="card hover-effect overflow-hidden">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                            <div class="p-6 flex flex-col items-center justify-center">
-                                <img src="/assets/ssashs.png" alt="Senior High School" 
-                                     class="img-container max-w-xs sm:max-w-sm h-auto mb-4">
-                                <h3 class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-outline">
-                                    Seguinon Stand Alone Senior High School
-                                </h3>
-                                <h6 class="text-center text-gray-300 text-lg sm:text-xl">
-                                    2020-2022
-                                </h6>
-                            </div>
-                            <div class="p-6 flex flex-col justify-center">
-                                <p class="text-white text-lg sm:text-xl md:text-xl lg:text-2xl font-light mb-6">
-                                    Studied and finished senior high school with the Science, Technology, Engineering and Mathematics (STEM) strand at the Seguinon Stand Alone Senior High School at Brgy. Seguinon, Albuera, Leyte.
-                                </p>
-                                <div class="relative mb-4">
-                                    <img src="/assets/paint.png" alt="Decoration" class="w-full max-w-md mx-auto h-8 sm:h-10">
-                                    <div class="absolute inset-0 flex items-center justify-center">
-                                        <h2 class="text-white text-lg sm:text-xl font-medium">Achievement</h2>
-                                    </div>
-                                </div>
-                                <div class="flex flex-col items-center">
-                                    <img src="/assets/ssashsgraduates.jfif" alt="Graduation" 
-                                         class="img-container rounded-lg max-w-xs sm:max-w-sm mb-4">
-                                    <p class="text-outline text-center text-lg sm:text-xl font-light">
-                                        Graduated With Honors!
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <hr class="sidebar-divider">
 
-            <section id="project" class="scroll-offset container mx-auto px-4 py-8 sm:py-12">
-                <div class="max-w-6xl mx-auto">
-                    <h1 class="text-center bg-black text-white text-2xl sm:text-3xl md:text-4xl font-bold py-4 px-6 rounded-t-xl mb-6">
-                        PROJECTS
-                    </h1>
-                    
-                    <!-- VSU Card -->
-                    <div class="card hover-effect mb-8 overflow-hidden">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                            <div class="p-6 flex flex-col items-center justify-center">
-                                <img src="/assets/eduvate_logo (1).png" alt="Project Voyager" 
-                                     class="img-container max-w-xs sm:max-w-sm h-auto mb-4">
-                                <h3 class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-outline">
-                                    Eduvate
-                                </h3>
-                                <h6 class="text-center text-gray-300 text-lg sm:text-xl">
-                                    2025
-                                </h6>
-                            </div>
-                            <div class="p-6 flex flex-col justify-center">
-                                <div class="relative mb-4">
-                                    <img src="/assets/paint.png" alt="Decoration" class="w-full max-w-md mx-auto h-8 sm:h-10">
-                                    <div class="absolute inset-0 flex items-center justify-center">
-                                        <h2 class="text-white text-xl sm:text-2xl font-semibold">Project Voyager</h2>
-                                    </div>
-                                </div>
-                                <p class="text-white text-md sm:text-lg md:text-lg lg:text-xl font-light mb-6">
-                                    <span class="font-bold">Eduvate</span>  
-                                    is a mobile-based application designed to enhance and streamline the classical mentorship program
-                                    of the Visayas State University Computer Science Students Society (VSU CS3).
-                                </p>
+    <!-- Nav -->
+    <div class="sidebar-nav-block">
+      <p class="sidebar-section-title">Sections</p>
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+      </ul>
+    </div>
 
-                                <p class="text-white text-md sm:text-lg md:text-lg lg:text-xl font-light mb-6">
-                                    <span class="font-bold">Tech Stack:</span> 
-                                    <span class="italic">Flutter, Firebase</span>
-                                </p>
-                               
-                            </div>
-                        </div>
-                    </div>
+    <!-- Download -->
+    <div class="sidebar-dl">
+      <a href="/assets/Jaballa-Resume.pdf" download="Jaballa_Resume.pdf">↓ Download PDF</a>
+    </div>
 
-                    <div class="card hover-effect mb-8 overflow-hidden">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                            <div class="p-6 flex flex-col items-center justify-center">
-                                <img src="/assets/final-logo-1.png" alt="Guidance Facilitation System" 
-                                     class="img-container max-w-xs sm:max-w-sm h-auto mb-4">
-                                <h3 class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-outline">
-                                    VSU-LHS Connect System 
-                                </h3>
-                                <h6 class="text-center text-gray-300 text-lg sm:text-xl">
-                                    2025
-                                </h6>
-                            </div>
-                            <div class="p-6 flex flex-col justify-center">
-                                <div class="relative mb-4">
-                                    <img src="/assets/paint.png" alt="Decoration" class="w-full max-w-md mx-auto h-8 sm:h-10">
-                                    <div class="absolute inset-0 flex items-center justify-center">
-                                        <h2 class="text-white text-xl sm:text-2xl font-semibold">Guidance Facilitation System</h2>
-                                    </div>
-                                </div>
-                                <p class="text-white text-md sm:text-lg md:text-lg lg:text-xl font-light mb-6">
-                                    <span class="font-bold">VSU-LHS Connect System</span> <span class="italic">(Visayas State University Laboratory High School Connect System)</span> 
-                                    is a web-based system designed to facilitate the guidance and counseling process for students, teachers, and parents. 
-                                    It aims to enhance communication, streamline administrative tasks, and provide valuable resources for academic and personal development.
-                                </p>
+  </aside>
 
-                                <p class="text-white text-md sm:text-lg md:text-lg lg:text-xl font-light mb-6">
-                                    <span class="font-bold">Tech Stack:</span> 
-                                    <span class="italic">Nuxt, Javascript, Vue, Firebase, HTML, Tailwind CSS</span>
-                                </p>
-                               
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card hover-effect mb-8 overflow-hidden">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                            <div class="p-6 flex flex-col items-center justify-center">
-                                <img src="/assets/Screenshot (103).png" alt="VersaTula
-                                     class="img-container max-w-xs sm:max-w-sm h-auto mb-4">
-                                <h3 class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-outline">
-                                    VersaTula
-                                </h3>
-                                <h6 class="text-center text-gray-300 text-lg sm:text-xl">
-                                    2024
-                                </h6>
-                            </div>
-                            <div class="p-6 flex flex-col justify-center">
-                                <div class="relative mb-4">
-                                    <img src="/assets/paint.png" alt="Decoration" class="w-full max-w-md mx-auto h-8 sm:h-10">
-                                    <div class="absolute inset-0 flex items-center justify-center">
-                                        <h2 class="text-white text-xl sm:text-2xl font-semibold">Text Language Detection Game</h2>
-                                    </div>
-                                </div>
-                                <p class="text-white text-md sm:text-lg md:text-lg lg:text-xl font-light mb-6">
-                                    <span class="font-bold">VersaTula</span> 
-                                    is a simple text language detection game that utilizes a Feed Forward Neural Network machine learning model to identify the language of a given text input.
-                                </p>
+  <!-- ── MAIN CONTENT ── -->
+  <main>
+    <div class="content">
 
-                                <p class="text-white text-md sm:text-lg md:text-lg lg:text-xl font-light mb-6">
-                                    <span class="font-bold">Tech Stack:</span> 
-                                    <span class="italic">Python, C#, Google Colab, Flask API</span>
-                                </p>
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+      <!-- EDUCATION -->
+      <div class="rs" id="education">
+        <p class="rs-label">Education</p>
+        <div class="rs-content">
 
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-org">Visayas State University</span>
+              <span class="entry-date">2022 – Present</span>
+            </div>
+            <p class="entry-role">BS Computer Science · Baybay City, Leyte</p>
+            <p class="entry-desc">Currently in fourth year of study. University Dean's Honor Student and DOST-JLSS Scholar, recognized for exceptional academic performance in the Computer Science program.</p>
+          </div>
 
-            <!-- Skills Section -->
-            <section id="skills" class="scroll-offset container mx-auto px-4 py-8 sm:py-12">
-                <div class="max-w-6xl mx-auto">
-                    <h1 class="text-center bg-black text-white text-2xl sm:text-3xl md:text-4xl font-bold py-4 px-6 rounded-t-xl mb-6">
-                        RELEVANT SKILLS
-                    </h1>
-                    
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <!-- Hard Skills -->
-                        <div class="card hover-effect p-6">
-                            <h2 class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-outline mb-6">
-                                Hard Skills (Technical Skills)
-                            </h2>
-                            <ul class="skill-list">
-                                <li class="mb-4">
-                                    <span class="font-semibold text-white text-lg sm:text-xl">Programming Languages:</span>
-                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">C, C#, Java, Python and JavaScript.</p>
-                                </li>
-                                <li class="mb-4">
-                                    <span class="font-semibold text-white text-lg sm:text-xl">Frameworks:</span>
-                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Nuxt, Vue</p>
-                                </li>
-                                <li class="mb-4">
-                                    <span class="font-semibold text-white text-lg sm:text-xl">Database Management:</span>
-                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">MySQL, Firebase</p>
-                                </li>
-                                <li class="mb-4">
-                                    <span class="font-semibold text-white text-lg sm:text-xl">Data Analysis:</span>
-                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Excel, WEKA</p>
-                                </li>
-                                <li class="mb-4">
-                                    <span class="font-semibold text-white text-lg sm:text-xl">Graphics Design:</span>
-                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Figma, Canva</p>
-                                </li>
-                                <li class="mb-4">
-                                    <span class="font-semibold text-white text-lg sm:text-xl">Project Management Tool:</span>
-                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Github</p>
-                                </li>
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-org">Seguinon Stand Alone Senior High School</span>
+              <span class="entry-date">2020 – 2022</span>
+            </div>
+            <p class="entry-role">STEM Strand · Brgy. Seguinon, Albuera, Leyte</p>
+            <p class="entry-desc">Graduated with honors under the Science, Technology, Engineering and Mathematics strand.</p>
+          </div>
 
-                            </ul>
-                        </div>
-                        
-                        <!-- Soft Skills -->
-                        <div class="card hover-effect p-6">
-                            <h2 class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-outline mb-6">
-                                Soft Skills
-                            </h2>
-                            <ul class="skill-list">
-                                <li class="mb-4">
-                                    <span class="font-semibold text-white text-lg sm:text-xl">Problem-Solving</span>
-                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Analytical thinking, Observative, Critical Thinking</p>
-                                </li>
-                                <li class="mb-4">
-                                    <span class="font-semibold text-white text-lg sm:text-xl">Teamwork</span>
-                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Collaboration, Conflict Resolution</p>
-                                </li>
-                                <li class="mb-4">
-                                    <span class="font-semibold text-white text-lg sm:text-xl">Time Management</span>
-                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Prioritization</p>
-                                </li>
-                                <li class="mb-4">
-                                    <span class="font-semibold text-white text-lg sm:text-xl">Adaptability</span>
-                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Flexible, Open-minded</p>
-                                </li>
-                                <li class="mb-4">
-                                    <span class="font-semibold text-white text-lg sm:text-xl">Leadership</span>
-                                </li>
-                                <li class="mb-4">
-                                    <span class="font-semibold text-white text-lg sm:text-xl">Communication</span>
-                                </li>
-                                <li class="mb-4">
-                                    <span class="font-semibold text-white text-lg sm:text-xl">Work Ethic</span>
-                                    <p class="text-gray-300 ml-4 mt-1 text-base sm:text-lg">Dependable, Initiative</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            
-
-            <!-- Extra Section -->
-            <section id="extra" class="scroll-offset container mx-auto px-4 py-8 sm:py-12">
-                <div class="max-w-6xl mx-auto">
-                    <h1 class="text-center bg-black text-white text-2xl sm:text-3xl md:text-4xl font-bold py-4 px-6 rounded-t-xl mb-6">
-                        Leadership and Achievements
-                    </h1>
-
-                    <div class="card hover-effect p-6">
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                            <div class="md:col-span-4 md:order-2 flex flex-col items-center">
-                                <img src="/assets/dost.png" alt="Achiever" class="img-container max-w-xs mb-4">
-                                <h3 class="text-center text-xl sm:text-2xl font-bold text-outline">
-                                    University College Honor and a DOST-JLSS Scholar
-                                </h3>
-                            </div>
-                            <div class="md:col-span-8 md:order-1 flex items-center">
-                                <p class="text-white text-lg sm:text-xl font-light">
-                                    Awarded for exceptional academic performance in the Computer Science program and 
-                                    recognized for potential in science and technology.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CS3 Card -->
-                    <div class="card hover-effect mb-8 p-6">
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                            <div class="md:col-span-4 flex flex-col items-center">
-                                <img src="/assets/cs3.png" alt="CS3" class="img-container max-w-xs mb-4">
-                                <h3 class="text-center text-xl sm:text-2xl font-bold text-outline">
-                                    VSU Computer Science Students Society (Member)
-                                </h3>
-                            </div>
-                            <div class="md:col-span-8 flex items-center">
-                                <p class="text-white text-lg sm:text-xl font-light">
-                                    An active member since 2022 and contributed to initiatives and events, enhancing student engagement and professional development.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- SK Card -->
-                    <div class="card hover-effect p-6">
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                            <div class="md:col-span-4 md:order-2 flex flex-col items-center">
-                                <img src="/assets/sk.png" alt="SK Tinag-an" class="img-container max-w-xs mb-4">
-                                <h3 class="text-center text-xl sm:text-2xl font-bold text-outline">
-                                    Sangguniang Kabataan Councilor
-                                </h3>
-                            </div>
-                            <div class="md:col-span-8 md:order-1 flex items-center">
-                                <p class="text-white text-lg sm:text-xl font-light">
-                                    Leads and successfully implemented projects that benefits the community from over 11 different places (sitios) inside our barangay.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
-    </main>
-    
-    <footer class="bg-black text-white py-6 text-center">
-        <p class="text-sm sm:text-base">© 2023 Jade's Personal Website. All rights reserved.</p>
+      </div>
+
+      <hr>
+
+      <!-- PROJECTS -->
+      <div class="rs" id="projects">
+        <p class="rs-label">Projects</p>
+        <div class="rs-content">
+
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-org">USSC Connect</span>
+              <span class="entry-date">2026</span>
+            </div>
+            <p class="entry-desc">A web-based application system that streamlines the VSU-Baybay University Supreme Student Council's event attendance and
+            clearance management of the students at the Visayas State University.</p>
+            <div class="entry-tag-row">
+              <span class="tag">React</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">Firebase</span>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-org">Eduvate (Project Voyager)</span>
+              <span class="entry-date">2025</span>
+            </div>
+            <p class="entry-desc">A mobile-based application designed to streamline the classical mentorship program of the VSU Computer Science Students Society, connecting mentors and students efficiently.</p>
+            <div class="entry-tag-row">
+              <span class="tag">Flutter</span>
+              <span class="tag">Firebase</span>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-org">VSU-LHS Connect System</span>
+              <span class="entry-date">2025</span>
+            </div>
+            <p class="entry-desc">A web-based guidance and counseling system for VSU Laboratory High School. Facilitates communication between students, teachers, and parents, and streamlines administrative workflows.</p>
+            <div class="entry-tag-row">
+              <span class="tag">Nuxt</span>
+              <span class="tag">Vue</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-org">VersaTula — Text Language Detection Game</span>
+              <span class="entry-date">2024</span>
+            </div>
+            <p class="entry-desc">An interactive game that uses a Feed Forward Neural Network model to identify the language of user-submitted text input, supporting multiple languages.</p>
+            <div class="entry-tag-row">
+              <span class="tag">Python</span>
+              <span class="tag">C#</span>
+              <span class="tag">Flask</span>
+              <span class="tag">Google Colab</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- SKILLS -->
+      <div class="rs" id="skills">
+        <p class="rs-label">Skills</p>
+        <div class="rs-content">
+          <div class="skills-grid">
+            <div>
+              <p class="skill-cat-title">Programming Languages</p>
+              <div class="skill-items">
+                <span class="tag">C</span><span class="tag">C++</span>
+                <span class="tag">C#</span><span class="tag">Dart</span>
+                <span class="tag">Java</span><span class="tag">Python</span>
+                <span class="tag">JavaScript</span><span class="tag">Typescript</span>
+              </div>
+            </div>
+            <div>
+              <p class="skill-cat-title">Frameworks &amp; Libraries</p>
+              <div class="skill-items">
+                <span class="tag">Vue</span><span class="tag">Nuxt</span>
+                <span class="tag">Flutter</span><span class="tag">Tailwind CSS</span>
+                <span class="tag">Next.js</span><span class="tag">React</span>
+              </div>
+            </div>
+            <div>
+              <p class="skill-cat-title">Databases &amp; Platforms</p>
+              <div class="skill-items">
+                <span class="tag">Firebase</span><span class="tag">MySQL</span>
+              </div>
+            </div>
+            <div>
+              <p class="skill-cat-title">Tools</p>
+              <div class="skill-items">
+                <span class="tag">Git &amp; GitHub</span>
+                <span class="tag">WEKA</span><span class="tag">VS Code</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- ACHIEVEMENTS -->
+      <div class="rs" id="achievements">
+        <p class="rs-label">Leadership &amp; Achievements</p>
+        <div class="rs-content">
+
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-org">Project Manager Trainee (On-the-Job Training at Alliance Software Incorporated)</span>
+              <span class="entry-date">2025</span>
+            </div>
+            <p class="entry-desc">Led a team of interns in developing a software project under strict, fixed deadlines.</p>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-org">DOST-JLSS Scholar &amp; University College Honor</span>
+              <span class="entry-date">2022 – Present</span>
+            </div>
+            <p class="entry-desc">Awarded for exceptional academic performance in the Computer Science program; recognized for potential in science and technology by the Department of Science and Technology.</p>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-org">Sangguniang Kabataan Councilor</span>
+              <span class="entry-date">2023-2026</span>
+            </div>
+            <p class="entry-role">Brgy. Tinag-an, Albuera, Leyte</p>
+            <p class="entry-desc">Leads and implements community projects benefiting residents across 11 sitios within the barangay, focusing on youth engagement and local development.</p>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-org">VSU Computer Science Students Society</span>
+              <span class="entry-date">2025 – 2026</span>
+            </div>
+            <p class="entry-role">4th Year Representative</p>
+            <p class="entry-desc">Active contributor to organizational initiatives and events, enhancing student engagement and professional development opportunities within the CS department.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <p class="footer-copy">© <span id="yr"></span> Jade A. Jaballa</p>
+      <a href="/assets/Jaballa-Resume.pdf" download="Jaballa_Resume.pdf" class="btn-download">↓ Download PDF</a>
     </footer>
+  </main>
+
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Highlight active sidebar nav link on scroll
+  const sections = document.querySelectorAll('[id]');
+  const navLinks = document.querySelectorAll('#sidebar-nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
 </body>
 </html>
